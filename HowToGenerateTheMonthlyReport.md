@@ -153,6 +153,40 @@ _Breakdown by Demographic_
 
 (Analytics —> Audience -> Demographics —> Overview)
 
+Example:
+
 > ![](images/Screenshot%202017-08-11%2015.04.32.png)
 
 4. **Information of promotion/marketing of the resource**
+
+For this one would need to talk to the marketing team to check what activities have taken place this month.
+
+Example:
+
+> AgileVentures has ben investigating using some of their Google AdWords budget to help promote the wiki, but have come up against Google regulations which restrict the use of Google AdWords to promoting only the domains that were registered when the charity signed up for the Google AdWords grant.  As a result we cannot put AdWords behind sites that are not under the agileventures.org domain.  AgileVentures Co-Founder Sam Joseph attended the NW CCG meeting to promote the wiki to the commissioners, where the wiki was well received.
+
+
+5. **Other data as agreed to assist evaluation (i.e.uptime/downtime)**
+
+Azure guarantees a high level of uptime which is usually covered by the following statement:
+
+> Azure guarantees a 99% uptime for their Azure service: https://azure.microsoft.com/en-us/support/legal/sla/cloud-services/v1_0/ - there have not been any outages in the last month.
+
+although sometimes we'll need to add things like the following:
+
+> This month we needed to take the site down for an hour to renew our https security certificates.
+
+6. **Planned work going forward**
+
+Here we need to include sections of work planned for the upcoming months e.g. 
+
+> **August:**
+
+>   Script for help video
+>   Launch logo
+
+> **September:**	
+>   Help video
+
+> **October:**
+>   SEO push
