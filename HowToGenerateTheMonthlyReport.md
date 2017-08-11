@@ -1,3 +1,5 @@
+# Moderation
+
 1. **List the number of rejected contributions with reasons**
 
 Visit https://wiki.healthylondon.org and visit https://wiki.healthylondon.org/Special:Moderation (Note this requires mode)
@@ -70,3 +72,58 @@ OR
 
 > Logins are not required to view the site. Site traffic from Google Analytics indicates that over the last month there were 238 visits to the site, corresponding to 139 different unique users. The average session duration was 2 minutes and 54 seconds which involved visiting on average 2.95 pages.  These numbers are all down slightly on the previous month.
 
+# Marketing
+
+1. **Number of users that logged in who commented or added to the wiki**
+
+This involves navigating to https://wiki.healthylondon.org/Special:ActiveUsers where we'll see output like the following:
+
+![](images/Screenshot%202017-08-11%2014.21.11.png)
+
+Which we can turn into a report with a table like so
+
+Examples:
+
+> 4 users were active in the last 30 days (down from 11 last month)
+
+> | #Actions | UserName       |
+> | ---------|----------------|
+> | 49       | Suzi.griffiths |
+> | 3        | JacquiWheeler  |
+> | 2        | Msekeram       |
+> | 1        | BJBrown        |
+
+2. **What sections of the resource receive the most activity from users?**
+
+_Top ten visited pages:_
+
+Here we usually include a screenshot from Google Analytics:
+
+(Analytics —> Behaviour -> Site Contents —> All Pages [Pie Chart View])
+
+Example: 
+
+> ![](images/Screenshot%202017-08-11%2014.39.29.png)
+
+_Top ten edited pages_
+
+Here we grab data from https://wiki.healthylondon.org/Special:MostRevisions, where we'll see data like so:
+
+![](images/Screenshot%202017-08-11%2014.42.48.png)
+
+Note that this data is over the lifetime of the wiki rather than the last month per se.  It's not immediately clear how we could get a data view of this month by month - it would require further exploration of mediawiki or additional of some plugin.  Still it gives a lifetime overview of the total edits on all pages.
+
+Example:
+
+> | #Revisions | Page Name                                                           |
+> | -----------|---------------------------------------------------------------------|
+> | 61         | Social Prescribing and Self Care Wiki                               |
+> | 25         | Social Prescribing                                                  |
+> | 14         | Help                                                                | 
+> | 14         | Policy and strategy in social prescribing                           |
+> | 14         | Test Page                                                           |
+> | 11         | Social prescribing for children, young people, parents and carers   |
+> | 11         | Steps towards implementation                                        |
+> | 10         | Monitoring and evaluating social prescribing                        | 
+> | 10         | Digital engagement                                                  |
+> | 9          | Social prescribing and mental health                                | 
