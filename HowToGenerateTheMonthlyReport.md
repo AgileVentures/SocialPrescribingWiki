@@ -1,3 +1,6 @@
+(This is a guide to creating the monthly moderation and marketing report for the NHS HLP Social Prescribing and Self-care wiki)
+
+
 # Moderation
 
 1. **List the number of rejected contributions with reasons**
