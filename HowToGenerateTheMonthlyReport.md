@@ -43,3 +43,30 @@ Examples:
 OR
 
 > It appears that the new "captcha" has completely eliminated spam submissions to the site. As a consequence some other issues have been amplified. No notification appeared for one suggested change by a new user; only a notification when a new user was created.  The new user submission has been approved, but it is unclear how long the user had to wait for approval. For next month AgileVentures will check that moderation notifications are in place accordingly, to ensure speedy approval of relevant submissions. 
+
+4. **Other data as agreed to aid evaluation**
+
+No other data has yet been requested and so the standard entry here is:
+
+> No other data yet requested.
+
+5. **The number of user log-ins (unique and repeated)**
+
+This data comes from [Google Analytics](https://analytics.google.com), and requires access to the HLP Wiki reports.  One needs to be careful to start off by navigating to "Audience" -> "Overview" and setting the date range appropriately:
+
+![](images/Screenshot%202017-08-11%2014.11.04.png)
+
+Here we'll see overview data for the month:
+
+![](images/Screenshot%202017-08-11%2014.12.25.png)
+
+At the moment we report the number of visits to the site (sessions), the number of different unique users (users), the average session duration (Avg. session duration) and the average number of pages visited (Pages/Session).
+
+Examples:
+
+> Logins are not required to view the site. Site traffic from Google Analytics indicates that over the last month there were 261 visits to the site, corresponding to 149 different unique users. The average session duration was 3 minutes and 28 second s which involved visiting on average 4.28 pages.  These numbers are all similar to the previous month.
+
+OR
+
+> Logins are not required to view the site. Site traffic from Google Analytics indicates that over the last month there were 238 visits to the site, corresponding to 139 different unique users. The average session duration was 2 minutes and 54 seconds which involved visiting on average 2.95 pages.  These numbers are all down slightly on the previous month.
+
