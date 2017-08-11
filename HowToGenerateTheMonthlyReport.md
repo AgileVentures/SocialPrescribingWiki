@@ -182,11 +182,11 @@ Here we need to include sections of work planned for the upcoming months e.g.
 
 > **August:**
 
->   Script for help video
->   Launch logo
+> -  Script for help video
+> -  Launch logo
 
 > **September:**	
->   Help video
+> -  Help video
 
 > **October:**
->   SEO push
+> -  SEO push
