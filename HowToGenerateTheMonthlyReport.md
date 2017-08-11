@@ -127,3 +127,32 @@ Example:
 > | 10         | Monitoring and evaluating social prescribing                        | 
 > | 10         | Digital engagement                                                  |
 > | 9          | Social prescribing and mental health                                | 
+
+
+3. **Geographical location and role of user**
+
+Here we usually include a screenshot from Google Analytics:
+
+_Breakdown by Country_
+
+(Analytics —> Audience -> Geo —> Location [Pie chart view] by country)
+
+Example:
+
+> ![](images/Screenshot%202017-08-11%2014.59.41.png)
+
+_Breakdown by City_
+
+(Analytics —> Audience -> Geo —> Location [Pie chart view] by city)
+
+Example:
+
+> ![](images/Screenshot%202017-08-11%2015.01.14.png)
+
+_Breakdown by Demographic_
+
+(Analytics —> Audience -> Demographics —> Overview)
+
+> ![](images/Screenshot%202017-08-11%2015.04.32.png)
+
+4. **Information of promotion/marketing of the resource**
