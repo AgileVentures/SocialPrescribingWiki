@@ -61,18 +61,34 @@ git push azure_develop master
 dokku domains:add mediawiki develop.hlpwiki.agileventures.org
 ```
 
-5. 
+5. Get https set up - following instructions from https://github.com/dokku/dokku-letsencrypt
 
+(assumes you are logged into the box dokku is running on)
+
+```
+dokku config:set --no-restart mediawiki DOKKU_LETSENCRYPT_EMAIL=sam@agileventures.org
+dokku network:set mediawiki bind-all-interfaces true
+dokku letsencrypt mediawiki
+```
+6. ? adjust ports (not sure if needed?)
+
+```
+dokku proxy:ports-clear mediawiki
+dokku proxy:ports-remove mediawiki http:443:443
+dokku ps:restart mediawiki
+```
 
 Notes
 -----
 
 these config vars on working instance that are not there by default ...
 
+```
 DOKKU_APP_PROXY_TYPE:         nginx-vhosts
 DOKKU_LETSENCRYPT_EMAIL:      sam@agileventures.org
 DOKKU_NGINX_SSL_PORT:         443
 DOKKU_PROXY_PORT_MAP:         http:80:80
 DOKKU_PROXY_SSL_PORT:         443
+```
 
 
