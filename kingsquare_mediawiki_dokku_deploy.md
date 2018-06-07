@@ -3,6 +3,7 @@ To deploy the kingsquare mediawiki onto dokku and setup with https we need to do
 1. instructions from https://github.com/kingsquare/mediawiki-dokku  
 
 (assumes you are logged into the box dokku is running on)
+(this run through via dokku 0.12.7)
 
 ```
 # create an app
@@ -77,6 +78,16 @@ dokku proxy:ports-clear mediawiki
 dokku proxy:ports-remove mediawiki http:443:443
 dokku ps:restart mediawiki
 ```
+
+7. ? wait a couple of hours and then refresh (not sure if needed?)
+
+```
+dokku letsencrypt:cleanup mediawiki
+dokku letsencrypt:auto-renew mediawiki
+dokku letsencrypt mediawiki
+```
+
+8. set up cron job to ensure autorenewal?
 
 Notes
 -----
