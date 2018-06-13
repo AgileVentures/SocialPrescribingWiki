@@ -37,7 +37,7 @@ dokku mariadb:link mediawiki mediawiki
 
 ```
 dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX
-dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX
+dokku config:set mediawiki MEDIAWIKI_ADMIN_PASS=XXXXX
 ```
 
 3. Git based deploy
