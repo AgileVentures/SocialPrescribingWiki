@@ -36,8 +36,8 @@ dokku mariadb:link mediawiki mediawiki
 (assumes you are logged into the box dokku is running on)
 
 ```
-dokku config:set mediawiki_clean_doc MEDIAWIKI_ADMIN_USER=XXXXX
-dokku config:set mediawiki_clean_doc MEDIAWIKI_ADMIN_USER=XXXXX
+dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX
+dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX
 ```
 
 3. Git based deploy
