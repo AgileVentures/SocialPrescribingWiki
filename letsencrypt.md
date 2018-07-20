@@ -1,3 +1,14 @@
+Production server:
+------------------
+
+The following seems to work pretty reliably
+
+```
+$ sudo /opt/bitnami/ctlscript.sh stop apache
+$ sudo certbot renew
+$ sudo /opt/bitnami/ctlscript.sh start apache
+```
+
 Staging server: `sudo certbot renew` appears to work but may see the following:
 ------------------------------------------------------------------------------
 
