@@ -45,11 +45,18 @@ dokku config:set mediawiki MEDIAWIKI_ADMIN_PASS=XXXXX
 i) set remote on clone of AgileVentures/SocialPrescribingWiki
 
 ```
-git remote add azure_develop dokku@nhs-dokku.eastus.cloudapp.azure.com:mediawiki
+git remote add azure-develop dokku@nhs-dokku.eastus.cloudapp.azure.com:mediawiki
 ```
 
 ii) push up dockerfile via git
 
 ```
-git push azure_develop master
+git push azure-develop master
+```
+
+
+4. Set up domains
+
+```
+ssh dokku@nhs-dokku.eastus.cloudapp.azure.com domains:add mediawiki_official develop-official.hlpwiki.agileventures.org 
 ```
