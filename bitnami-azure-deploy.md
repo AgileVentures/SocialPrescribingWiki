@@ -32,6 +32,9 @@ possible problems
 
 ![](https://dl.dropbox.com/s/cll9a4wvqi7yxog/Screenshot%202018-09-11%2013.15.18.png?dl=0)
 
+> You have no Subscriptions in your account. Please contact your administrator for giving you access for a subscription.
+
+![](https://dl.dropbox.com/s/flwoyc3qs7gsw6c/Screenshot%20at%202018-09-11%2012%3A39%3A16.png?dl=0)
 
 this is the types of users we have (only federico can see this):
 
