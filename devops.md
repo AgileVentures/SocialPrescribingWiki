@@ -9,7 +9,7 @@ User bitnami
 we will also need your ssh public key to give you access
 
 
-## Adding Another User to the VM
+## Adding Another User to the VM (Bitnami instance)
 
 see also: https://docs.bitnami.com/aws/faq/operating-servers-instances/provide_additional_ssh_access/
 
