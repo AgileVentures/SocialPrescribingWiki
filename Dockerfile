@@ -1,4 +1,4 @@
-FROM mediawiki:1.30
+FROM mediawiki:1.31
 
 # below is copied from https://github.com/kingsquare/mediawiki-docker/blob/master/Dockerfile
 
