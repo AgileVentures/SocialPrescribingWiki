@@ -37,7 +37,7 @@ hlp-wiki-production-clone 10800 IN CNAME hlpwiki-production-clone.cloudapp.net.
 
 d) tune the parsoid/mediawiki/apache config
 
-in `/home/bitnami/apps/mediawiki/htdocsLocalSettings.php` update the Parsoid URL
+in `/home/bitnami/apps/mediawiki/htdocs/LocalSettings.php` update the Parsoid URL
 
 ```
 ## Parsoid service for Visual Editor
