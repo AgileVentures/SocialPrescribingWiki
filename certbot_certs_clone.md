@@ -63,9 +63,11 @@ IMPORTANT NOTES:
    Your cert will expire on 2018-12-10. To obtain a new or tweaked
    version of this certificate in the future, simply run certbot again
    with the "certonly" option. To non-interactively renew *all* of
-   your certificates, run "certbot renew"```
+   your certificates, run "certbot renew"
+```
 
 I then went to start apache and got this familiar error from day 1 of our Sprint
+
 ```
 matt@bitnami-mediawiki-74f7:/etc/certbot$ sudo /opt/bitnami/ctlscript.sh start apache
 Syntax OK
