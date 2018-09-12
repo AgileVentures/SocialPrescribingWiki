@@ -25,7 +25,7 @@ a) adjust the port endpoints (they get randomised)
 
 need to be as follows:
 
-![](https://dl.dropbox.com/s/lhw1ypedcap55to/Screenshot%202018-09-12%2016.32.33.png?dl=0)
+![](https://dl.dropbox.com/s/00sw92vygg17gll/Screenshot%202018-09-12%2017.15.47.png?dl=0)
 
 b) ensure apache is running (may involve configuring sshd)
 c) set up agileventures subdomain on gandi DNS
