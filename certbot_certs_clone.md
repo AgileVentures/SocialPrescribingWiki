@@ -1,34 +1,59 @@
+Matt's work from part 5 of the sprint
+-------------------------------------
+
 After having tried to follow Sam's blog step by step at: https://medium.com/agileventures/azure-mediawiki-stack-part-4-2697678a43aa, and not finding any `/tmp/certbot` or `certbot-auto`, I decided to go directly to certbot's site and see how the commands differed.
 
 I was able to find this, https://certbot.eff.org/lets-encrypt/ubuntutrusty-apache, which is for ubuntutrust and apache, and followed the instructions there, by running:
-```$ sudo apt-get update
+
+```
+$ sudo apt-get update
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository ppa:certbot/certbot
 $ sudo apt-get update
-$ sudo apt-get install python-certbot-apache```
+$ sudo apt-get install python-certbot-apache
+```
 
 software-properties-common was already installed, but python-certbot-apache was not.
 
-Then the instructions say to run `sudo certbot --apache`, and added ```Running this command will get a certificate for you and have Certbot edit your Apache configuration automatically to serve it. If you're feeling more conservative and would like to make the changes to your Apache configuration by hand, you can use the certonly subcommand:``` `sudo certbot --apache certonly`
+Then the instructions say to run `sudo certbot --apache`, and added 
 
-As this was what I found Sam had run in the blog post, I tried this command with `--webroot` like so: `sudo certbot certonly --webroot -w /opt/bitnami/apps/mediawiki/htdocs/ -d hlp-wiki-staging-clone.agileventures.org`, which failed with this error ```Failed authorization procedure. hlp-wiki-staging-clone.agileventures.org (http-01): urn:ietf:params:acme:error:connection :: The server could not connect to the client to verify the domain :: Fetching http://hlp-wiki-staging-clone.agileventures.org/.well-known/acme-challenge/e5uTN1hwKhUJw0raoYnORUW3YFqstyd1KdB7o-QHfIU: Connection refused```.
+```
+Running this command will get a certificate for you and have Certbot edit your Apache configuration automatically to serve it. If you're feeling more conservative and would like to make the changes to your Apache configuration by hand, you can use the certonly subcommand:
+``` 
 
-Feeling I might make things more difficult, I stopped the video recording, and almost gave up, when I decided to try running the `sudo certbot --apache certonly` command, which prompted me like so: ```No names were found in your configuration files. Please enter in your domain
+`sudo certbot --apache certonly`
+
+As this was what I found Sam had run in the blog post, I tried this command with `--webroot` like so: `sudo certbot certonly --webroot -w /opt/bitnami/apps/mediawiki/htdocs/ -d hlp-wiki-staging-clone.agileventures.org`, which failed with this error 
+
+```
+Failed authorization procedure. hlp-wiki-staging-clone.agileventures.org (http-01): urn:ietf:params:acme:error:connection :: The server could not connect to the client to verify the domain :: Fetching http://hlp-wiki-staging-clone.agileventures.org/.well-known/acme-challenge/e5uTN1hwKhUJw0raoYnORUW3YFqstyd1KdB7o-QHfIU: Connection refused
+```
+
+Feeling I might make things more difficult, I stopped the video recording, and almost gave up, when I decided to try running the `sudo certbot --apache certonly` command, which prompted me like so: 
+
+```
+No names were found in your configuration files. Please enter in your domain
 name(s) (comma and/or space separated)  (Enter 'c' to cancel): hlp-wiki-staging-clone.agileventures.org
-``` and then created the certificate!!
+``` 
+
+and then created the certificate!!
 
 Success looks like this:
+
 ```
 Congratulations! You have successfully enabled
 https://hlp-wiki-staging-clone.agileventures.org
 
 You should test your configuration at:
-https://www.ssllabs.com/ssltest/analyze.html?d=hlp-wiki-staging-clone.agileventures.org```
+https://www.ssllabs.com/ssltest/analyze.html?d=hlp-wiki-staging-clone.agileventures.org
+```
 
 I promptly went to test the configuration which gave me this result:
+
 ![](https://dl.dropbox.com/s/2ymz7k32h47wvi0/hlp-wiki-staging-clone-test-cert.png?dl=0)
 
 The output also gave this helpful information:
+
 ```
 IMPORTANT NOTES:
  - Congratulations! Your certificate and chain have been saved at:
