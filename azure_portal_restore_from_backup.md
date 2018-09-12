@@ -34,8 +34,8 @@ c) set up agileventures subdomain on gandi DNS
 hlp-wiki-production-clone 10800 IN CNAME hlpwiki-production-clone.cloudapp.net.
 ```
 
-d) set up the ssl certs
-e) tune the parsoid/mediawiki/apache config
+
+d) tune the parsoid/mediawiki/apache config
 
 in `/home/bitnami/apps/mediawiki/htdocsLocalSettings.php` update the Parsoid URL
 
@@ -69,7 +69,7 @@ update `nano /etc/mediawiki/parsoid/settings.js`
 parsoidConfig.setMwApi({ uri: 'https://hlp-wiki-production-clone.agileventures.org/api.php', prefix: ...
 ```
 
-update `sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami.conf`
+update `sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami.conf` (stop apache before this change)
 
 ```
 <VirtualHost *:80>
@@ -100,6 +100,13 @@ update `sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami.conf`
 
   <Directory "/opt/bitnami/apache2/htdocs">
 ```
+
+e) set up the ssl certs (stop apache first)
+
+```
+sudo certbot certonly --standalone
+```
+
 
 
 Notes
