@@ -28,12 +28,78 @@ need to be as follows:
 ![](https://dl.dropbox.com/s/lhw1ypedcap55to/Screenshot%202018-09-12%2016.32.33.png?dl=0)
 
 b) ensure apache is running (may involve configuring sshd)
-c) set up agileventures subdomain on gandi
+c) set up agileventures subdomain on gandi DNS
+
+```
+hlp-wiki-production-clone 10800 IN CNAME hlpwiki-production-clone.cloudapp.net.
+```
+
 d) set up the ssl certs
 e) tune the parsoid/mediawiki/apache config
 
+in `/home/bitnami/apps/mediawiki/htdocsLocalSettings.php` update the Parsoid URL
 
+```
+## Parsoid service for Visual Editor
 
+$wgVirtualRestConfig['modules']['parsoid'] = array(
+        // URL to the Parsoid instance
+        // Use port 8142 if you use the Debian package
+        'url' => 'https://hlp-wiki-production-clone.agileventures.org:8000',
+        // Parsoid "domain", see below (optional)
+        'domain' => 'localhost',
+        //Parsoid "prefix", see below (optional)
+        'prefix' => 'localhost'
+);
+```
+
+update `sudo nano /etc/mediawiki/parsoid/config.yaml`
+
+```
+        mwApis:
+        - # This is the only required parameter,
+          # the URL of you MediaWiki API endpoint.
+          uri: 'https://hlp-wiki-production-clone.agileventures.org/api.php'
+          # The "domain" is used for communication with Visual Editor
+```
+
+update `nano /etc/mediawiki/parsoid/settings.js`
+
+```
+parsoidConfig.setMwApi({ uri: 'https://hlp-wiki-production-clone.agileventures.org/api.php', prefix: ...
+```
+
+update `sudo nano /opt/bitnami/apache2/conf/bitnami/bitnami.conf`
+
+```
+<VirtualHost *:80>
+  DocumentRoot "/opt/bitnami/apache2/htdocs"
+  ServerName hlp-wiki-production-clone.agileventures.org
+  Redirect permanent / https://hlp-wiki-production-clone.agileventures.org/
+</VirtualHost>
+
+<VirtualHost *:8000>
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName hlp-wiki-production-clone.agileventures.org
+#  ServerAlias healthylondon.org
+  SSLEngine on
+  SSLCertificateFile /etc/letsencrypt/live/hlp-wiki-production-clone.agileventures.org/fullchain.pem
+  SSLCertificateKeyFile /etc/letsencrypt/live/hlp-wiki-production-clone.agileventures.org/privkey.pem
+
+  ProxyPass / http://localhost:8142/
+  ProxyPassReverse / http://localhost:8142/
+</VirtualHost>
+
+<VirtualHost _default_:443>
+  DocumentRoot "/opt/bitnami/apache2/htdocs"
+  ServerName hlp-wiki-production-clone.agileventures.org
+  SSLEngine on
+  SSLCertificateFile /etc/letsencrypt/live/hlp-wiki-production-clone.agileventures.org/fullchain.pem
+  SSLCertificateKeyFile /etc/letsencrypt/live/hlp-wiki-production-clone.agileventures.org/privkey.pem
+
+  <Directory "/opt/bitnami/apache2/htdocs">
+```
 
 
 Notes
