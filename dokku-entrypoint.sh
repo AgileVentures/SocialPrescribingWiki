@@ -37,4 +37,4 @@ fi
 
 # main image entrypoint
 echo "Executing main entrypoint script..."
-/entrypoint.sh $@
+exec "$@"
