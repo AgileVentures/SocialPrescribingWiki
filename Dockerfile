@@ -9,6 +9,6 @@ FROM mediawiki:1.31
 
 # COPY docker-entrypoint.sh /entrypoint.sh
 
-# EXPOSE 80 443
+EXPOSE 80 443
 # ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
+CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
