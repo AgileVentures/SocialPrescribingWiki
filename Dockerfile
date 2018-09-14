@@ -7,8 +7,8 @@ FROM mediawiki:1.31
 # COPY apache/mediawiki.conf /etc/apache2/
 # RUN echo "Include /etc/apache2/mediawiki.conf" >> /etc/apache2/apache2.conf
 
-# COPY docker-entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 80 443
-# ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
