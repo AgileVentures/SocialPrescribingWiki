@@ -17,7 +17,7 @@ To grant VM access to another user:
 
 1. `ssh ubuntu@hlpwiki-staging`
 
-2. `sudo adduser michael` to add a sam as a user and fill out form with password. Dispatch password to michael forthwith, using any means at your disposal, however crypographically insecure.
+2. `sudo adduser michael` to add a michael as a user and fill out form with password. Dispatch password to michael forthwith, using crypographically secure means.
 
 ```
 bitnami@bitnami-mediawiki-74f7:~$ sudo adduser michael
@@ -48,6 +48,7 @@ sudo cp -rp ~bitnami/.profile ~michael/
 ```
 
 4. Edit the authorized keys file `sudo nano /home/michael/.ssh/authorized_keys` and add michael's public key (making sure ssh is at the start)
+
 5. Give michael back ownership of his folder and file
 
    ```sh
