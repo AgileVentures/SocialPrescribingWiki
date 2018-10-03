@@ -8,6 +8,7 @@ FROM mediawiki:1.31
 # RUN echo "Include /etc/apache2/mediawiki.conf" >> /etc/apache2/apache2.conf
 
 COPY dokku-entrypoint.sh /dokku-entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
