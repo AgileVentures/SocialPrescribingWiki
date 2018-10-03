@@ -37,4 +37,6 @@ fi
 
 # main image entrypoint
 echo "Executing main entrypoint script..."
+echo "$MEDIAWIKI_DB_HOST"
+echo "$@"
 exec "$@"
