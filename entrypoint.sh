@@ -1,3 +1,6 @@
+echo "MEDIAWIKI_ADMIN_USER: '$MEDIAWIKI_ADMIN_USER'"
+echo "MEDIAWIKI_ADMIN_PASS: '$MEDIAWIKI_ADMIN_PASS'"
+
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
