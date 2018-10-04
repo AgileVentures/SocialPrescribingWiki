@@ -21,13 +21,13 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
     #     # Append inclusion of /compose_conf/CustomSettings.php
     #     echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
 
-		# # If we have a mounted share volume, move the LocalSettings.php to it
-		# # so it can be restored if this container needs to be reinitiated
-		# if [ -d "$MEDIAWIKI_SHARED" ]; then
-		# 	# Move generated LocalSettings.php to share volume
-		# 	mv LocalSettings.php "$MEDIAWIKI_SHARED/LocalSettings.php"
-		# 	ln -s "$MEDIAWIKI_SHARED/LocalSettings.php" LocalSettings.php
-		# fi
+	# If we have a mounted share volume, move the LocalSettings.php to it
+	# so it can be restored if this container needs to be reinitiated
+	if [ -d "$MEDIAWIKI_SHARED" ]; then
+		# Move generated LocalSettings.php to share volume
+		mv LocalSettings.php "$MEDIAWIKI_SHARED/LocalSettings.php"
+		ln -s "$MEDIAWIKI_SHARED/LocalSettings.php" LocalSettings.php
+	fi
 fi
 
 exec "$@"
