@@ -15,17 +15,18 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "alt" => "Customized by AgileVentures."
 );
 
-// wfLoadExtension( 'Moderation' );
+wfLoadExtension( 'Moderation' );
 
-// $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
-// $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
-// $wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
-// $wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let checkusers see IPs on Special:Moderation
+$wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
+$wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
+$wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
+$wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let checkusers see IPs on Special:Moderation
 
-// $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
-// $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
+$wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
+$wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
 
-// $wgModerationNotificationEnable = true;
-// $wgModerationNotificationNewOnly = false;
-// $wgModerationEmail = $wgEmergencyContact;
+$wgModerationNotificationEnable = true;
+$wgModerationNotificationNewOnly = false;
+$wgModerationEmail = $wgEmergencyContact;
+
 @include('/app/LocalSettings.php');
