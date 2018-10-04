@@ -1,4 +1,15 @@
 # If there is no LocalSettings.php, create one using maintenance/install.php
+echo "MEDIAWIKI_DB_NAME: $MEDIAWIKI_DB_NAME"
+echo "MEDIAWIKI_DB_SCHEMA: $MEDIAWIKI_DB_SCHEMA"
+echo "MEDIAWIKI_DB_PORT: $MEDIAWIKI_DB_PORT"
+echo "MEDIAWIKI_DB_HOST: $MEDIAWIKI_DB_HOST"
+echo "MEDIAWIKI_DB_TYPE: $MEDIAWIKI_DB_TYPE"
+echo "MEDIAWIKI_DB_USER: $MEDIAWIKI_DB_USER"
+echo "MEDIAWIKI_DB_PASSWORD: $MEDIAWIKI_DB_PASSWORD"
+echo "MEDIAWIKI_SITE_SERVER: $MEDIAWIKI_SITE_SERVER"
+echo "MEDIAWIKI_SITE_LANG: $MEDIAWIKI_SITE_LANG"
+echo "MEDIAWIKI_SITE_NAME: $MEDIAWIKI_SITE_NAME"
+
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
 		--confpath /var/www/html \
