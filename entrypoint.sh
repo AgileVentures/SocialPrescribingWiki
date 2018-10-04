@@ -1,5 +1,5 @@
 # If there is no LocalSettings.php, create one using maintenance/install.php
-if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
+# if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
 		--confpath /var/www/html \
 		--dbname "$MEDIAWIKI_DB_NAME" \
@@ -20,7 +20,7 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-fi
+# fi
 # echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 # if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 # 	echo >&2 'info: Running maintenance/update.php';
