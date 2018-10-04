@@ -6,7 +6,7 @@ FROM mediawiki:1.31
 
 # COPY apache/mediawiki.conf /etc/apache2/
 # RUN echo "Include /etc/apache2/mediawiki.conf" >> /etc/apache2/apache2.conf
-# COPY conf /conf
+COPY conf /conf
 COPY extensions /extensions 
 COPY dokku-entrypoint.sh /dokku-entrypoint.sh
 COPY entrypoint.sh /entrypoint.sh
