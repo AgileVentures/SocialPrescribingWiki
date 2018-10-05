@@ -8,8 +8,8 @@ $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
 }
-
-$wgGroupPermissions['user']['editsitecss'] = true;
+$wgGroupPermissions['moderator']['editinterface'] = true;
+$wgGroupPermissions['user']['editinterface'] = true;
 
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $wgFooterIcons['poweredby']['myicon'] = array(
