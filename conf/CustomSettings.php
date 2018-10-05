@@ -1,6 +1,7 @@
 <?php
+@include('/app/LocalSettings.php');
 
-$wgLogo               = "https://www.healthylondon.org/sites/all/themes/nhslondon/assets/img/hlp-people1.png";
+$wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 
@@ -28,5 +29,3 @@ $wgFooterIcons['poweredby']['myicon'] = array(
 // $wgModerationNotificationEnable = true;
 // $wgModerationNotificationNewOnly = false;
 // $wgModerationEmail = $wgEmergencyContact;
-
-@include('/app/LocalSettings.php');
