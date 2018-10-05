@@ -10,7 +10,7 @@ if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
 }
 $wgGroupPermissions['moderator']['editinterface'] = true;
 $wgGroupPermissions['user']['editinterface'] = true;
-
+$wgDisableUploads = false;
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $wgFooterIcons['poweredby']['myicon'] = array(
     "src" => "https://dl.dropbox.com/s/1kekg96rkndea64/customized-by-agileventures-176wide.png?dl=1",
