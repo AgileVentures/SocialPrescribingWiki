@@ -17,7 +17,7 @@ $wgFooterIcons['poweredby']['myicon'] = array(
 );
 
 require_once "$IP/extensions/Moderation/Moderation.php";
-
+echo "$IP"
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
 $wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
