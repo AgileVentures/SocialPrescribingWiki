@@ -1,4 +1,4 @@
-php changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
+php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
