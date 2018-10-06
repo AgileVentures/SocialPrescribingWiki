@@ -18,7 +18,7 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "alt" => "Customized by AgileVentures."
 );
 
-// require_once "extensions/Moderation/Moderation.php";
+require_once "extensions/Moderation/Moderation.php";
 
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
