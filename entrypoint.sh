@@ -1,4 +1,4 @@
-php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
+# php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
@@ -16,9 +16,9 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 		--server "$MEDIAWIKI_SITE_SERVER" \
 		--scriptpath "" \
 		--lang "$MEDIAWIKI_SITE_LANG" \
-		--pass "$MEDIAWIKI_ADMIN_PASS" \
+		--pass "Admin" \
 		"$MEDIAWIKI_SITE_NAME" \
-		"$MEDIAWIKI_ADMIN_USER"
+		"Admin"
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
