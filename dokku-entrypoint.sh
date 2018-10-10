@@ -2,7 +2,8 @@
 
 $(php -- <<'EOPHP'
 <?php
-
+$SHOGGLE_TWEET_CONSUMER_KEY = getenv('SHOGGLE_TWEET_CONSUMER_KEY');
+$SHOGGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOGGLE_TWEET_CONSUMER_KEY_SECRET');
 $DATABASE_URL = parse_url(trim(getenv('DATABASE_URL')));
 if (empty($DATABASE_URL['scheme'])) {
     echo 'echo "DATABASE_URL is not set.. have you linked the database?" && exit -1';
@@ -19,6 +20,8 @@ echo 'export ' . implode(' ', [
     'MEDIAWIKI_UPDATE=true',
     'MEDIAWIKI_SITE_SERVER=https://develop-official.hlpwiki.agileventures.org',
     'MEDIAWIKI_RESTBASE_URL=',
+    'SHOGGLE_TWEET_CONSUMER_KEY=' . $SHOGGLE_TWEET_CONSUMER_KEY,
+    'SHOGGLE_TWEET_CONSUMER_KEY_SECRET=' . $SHOGGLE_TWEET_CONSUMER_KEY_SECRET
 ]);
 
 EOPHP
@@ -37,6 +40,8 @@ fi
 
 # main image entrypoint
 echo "Executing main entrypoint script..."
+echo "SHOGGLE_TWEET_CONSUMER_KEY: $SHOGGLE_TWEET_CONSUMER_KEY";
+echo "SHOGGLE_TWEET_CONSUMER_KEY_SECRET: $SHOGGLE_TWEET_CONSUMER_KEY_SECRET";
 echo "MEDIAWIKI_DB_TYPE: $MEDIAWIKI_DB_TYPE"
 echo "MEDIAWIKI_DB_HOST: $MEDIAWIKI_DB_HOST"
 echo "MEDIAWIKI_DB_PORT: $MEDIAWIKI_DB_PORT"

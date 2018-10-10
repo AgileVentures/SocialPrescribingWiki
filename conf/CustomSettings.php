@@ -6,8 +6,8 @@ $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 
 require_once "$IP/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
-$wgShoogleTweetConsumerKey = getenv('SHOGGLE_TWEET_CONSUMER_KEY');
-$wgShoogleTweetConsumerKeySecret = getenv('SHOGGLE_TWEET_CONSUMER_KEY_SECRET');
+$wgShoogleTweetConsumerKey = $SHOGGLE_TWEET_CONSUMER_KEY;
+$wgShoogleTweetConsumerKeySecret = $SHOGGLE_TWEET_CONSUMER_KEY_SECRET;
 
 if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
