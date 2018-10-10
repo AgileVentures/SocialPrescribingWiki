@@ -10,7 +10,7 @@ COPY conf /conf
 
 COPY dokku-entrypoint.sh /dokku-entrypoint.sh
 COPY entrypoint.sh /entrypoint.sh
-RUN ls -la maintenance
+COPY extensions /extensions
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
