@@ -1,5 +1,0 @@
-[tests/phpunit/decoupled/queue/*] - "Queue" subsection of decoupled testsuite.
-
-These tests
-- DO: make the edit via the user interface.
-- CHECK AFTERWARDS: contents of 'moderation' SQL table.
