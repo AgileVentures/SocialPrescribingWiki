@@ -27,15 +27,11 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "alt" => "Customized by AgileVentures."
 );
 
-$wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
-$wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
-$wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
-$wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let checkusers see IPs on Special:Moderation
 
 $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
 
-
+## Twitter extension
 require_once "/var/www/html/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 
 $SHOOGLE_TWEET_CONSUMER_KEY = getenv('SHOOGLE_TWEET_CONSUMER_KEY');
@@ -45,6 +41,7 @@ $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
 ## Video embed
+
 wfLoadExtension( 'EmbedVideo' );
 
 ## ConfirmEdit
@@ -64,8 +61,22 @@ $wgCaptchaTriggers['addurl'] = false;
 $wgCaptchaTriggers['createaccount'] = true;
 $wgCaptchaTriggers['badlogin'] = true;
 
+## ImageMap
+
+wfLoadExtension( 'ImageMap' );
+
+## Cite Extension
+
+wfLoadExtension( 'Cite' );
+
+## Moderation Extension
+
 wfLoadExtension( 'Moderation' );
 
+$wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
+$wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
+$wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
+$wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let checkusers see IPs on Special:Moderation
 $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
