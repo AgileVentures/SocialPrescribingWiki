@@ -1,5 +1,14 @@
 <?php
+
+error_reporting( -1 );
+ini_set( 'display_errors', 1 );
+
 @include('/app/LocalSettings.php');
+
+$wgShowExceptionDetails = true;
+$wgDebugToolbar = true;
+$wgShowDebug = true;
+$wgDevelopmentWarnings = true;
 
 $wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
@@ -35,3 +44,5 @@ $wgModerationEmail = $wgEmergencyContact;
 require_once "$IP/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 $wgShoogleTweetConsumerKey = "$SHOGGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOGGLE_TWEET_CONSUMER_KEY_SECRET";
+
+
