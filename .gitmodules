@@ -1,3 +1,6 @@
 [submodule "extensions/mediawiki-shoogletweet"]
 	path = extensions/mediawiki-shoogletweet
 	url = https://github.com/schinken/mediawiki-shoogletweet
+[submodule "extensions/Moderation"]
+	path = extensions/Moderation
+	url = https://github.com/edwardspec/mediawiki-moderation.git

@@ -26,8 +26,7 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "url" => "http://nonprofits.agileventures.org/",
     "alt" => "Customized by AgileVentures."
 );
-
-// require_once "extensions/Moderation/Moderation.php";
+// require_once "/custom-extensions/Moderation/Moderation.php";
 
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
@@ -37,9 +36,6 @@ $wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let ch
 $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
 
-$wgModerationNotificationEnable = true;
-$wgModerationNotificationNewOnly = false;
-$wgModerationEmail = $wgEmergencyContact;
 
 require_once "/custom-extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 
@@ -49,4 +45,9 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
+wfLoadExtension( 'Moderation' );
+
+$wgModerationNotificationEnable = true;
+$wgModerationNotificationNewOnly = false;
+$wgModerationEmail = $wgEmergencyContact;
 
