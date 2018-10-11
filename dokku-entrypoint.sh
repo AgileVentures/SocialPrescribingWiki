@@ -2,7 +2,8 @@
 
 $(php -- <<'EOPHP'
 <?php
-
+$MEDIAWIKI_ADMIN_USER = getenv('MEDIAWIKI_ADMIN_USER');
+$MEDIAWIKI_ADMIN_PASS = getenv('MEDIAWIKI_ADMIN_PASS');
 $DATABASE_URL = parse_url(trim(getenv('DATABASE_URL')));
 if (empty($DATABASE_URL['scheme'])) {
     echo 'echo "DATABASE_URL is not set.. have you linked the database?" && exit -1';
@@ -19,6 +20,8 @@ echo 'export ' . implode(' ', [
     'MEDIAWIKI_UPDATE=true',
     'MEDIAWIKI_SITE_SERVER=https://develop-official.hlpwiki.agileventures.org',
     'MEDIAWIKI_RESTBASE_URL=',
+    'MEDIAWIKI_ADMIN_USER=' . $MEDIAWIKI_ADMIN_USER,
+    'MEDIAWIKI_ADMIN_PASS=' . $MEDIAWIKI_ADMIN_PASS
 ]);
 
 EOPHP

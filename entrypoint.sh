@@ -1,5 +1,6 @@
-echo "MEDIAWIKI_ADMIN_USER: '$MEDIAWIKI_ADMIN_USER'"
-echo "MEDIAWIKI_ADMIN_PASS: '$MEDIAWIKI_ADMIN_PASS'"
+# php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
+echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
+echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
@@ -21,16 +22,13 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 		"$MEDIAWIKI_SITE_NAME" \
 		"$MEDIAWIKI_ADMIN_USER"
 
-    #     # Append inclusion of /compose_conf/CustomSettings.php
-    #     echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-
-		# # If we have a mounted share volume, move the LocalSettings.php to it
-		# # so it can be restored if this container needs to be reinitiated
-		# if [ -d "$MEDIAWIKI_SHARED" ]; then
-		# 	# Move generated LocalSettings.php to share volume
-		# 	mv LocalSettings.php "$MEDIAWIKI_SHARED/LocalSettings.php"
-		# 	ln -s "$MEDIAWIKI_SHARED/LocalSettings.php" LocalSettings.php
-		# fi
+        # Append inclusion of /compose_conf/CustomSettings.php
+        echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
+fi
+echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
+if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
+	echo >&2 'info: Running maintenance/update.php';
+	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
 
 exec "$@"
