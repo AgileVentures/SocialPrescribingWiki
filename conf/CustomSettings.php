@@ -40,6 +40,10 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
+## Extra Language Settings
+
+require_once "/var/www/html/extensions/ExtraLanguageLink/ExtraLanguageLink.php";
+
 ## Video embed
 
 wfLoadExtension( 'EmbedVideo' );
