@@ -26,7 +26,6 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "url" => "http://nonprofits.agileventures.org/",
     "alt" => "Customized by AgileVentures."
 );
-// require_once "/custom-extensions/Moderation/Moderation.php";
 
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
@@ -45,7 +44,7 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
-wfLoadExtension( 'Moderation' );
+require_once "/custom-extensions/Moderation/Moderation.php";
 
 $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
