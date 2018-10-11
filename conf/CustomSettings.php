@@ -41,12 +41,12 @@ $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
 
-require_once "/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
+require_once "/custom-extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 
-$SHOGGLE_TWEET_CONSUMER_KEY = getenv('SHOGGLE_TWEET_CONSUMER_KEY');
-$SHOGGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOGGLE_TWEET_CONSUMER_KEY_SECRET');
+$SHOOGLE_TWEET_CONSUMER_KEY = getenv('SHOOGLE_TWEET_CONSUMER_KEY');
+$SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET');
 
-$wgShoogleTweetConsumerKey = "$SHOGGLE_TWEET_CONSUMER_KEY";
-$wgShoogleTweetConsumerKeySecret = "$SHOGGLE_TWEET_CONSUMER_KEY_SECRET";
+$wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
+$wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
 
