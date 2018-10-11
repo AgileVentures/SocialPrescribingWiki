@@ -2,8 +2,13 @@
 
 $(php -- <<'EOPHP'
 <?php
+
+$SHOGGLE_TWEET_CONSUMER_KEY = getenv('SHOGGLE_TWEET_CONSUMER_KEY');
+$SHOGGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOGGLE_TWEET_CONSUMER_KEY_SECRET');
+
 $MEDIAWIKI_ADMIN_USER = getenv('MEDIAWIKI_ADMIN_USER');
 $MEDIAWIKI_ADMIN_PASS = getenv('MEDIAWIKI_ADMIN_PASS');
+
 $DATABASE_URL = parse_url(trim(getenv('DATABASE_URL')));
 if (empty($DATABASE_URL['scheme'])) {
     echo 'echo "DATABASE_URL is not set.. have you linked the database?" && exit -1';
