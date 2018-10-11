@@ -2,9 +2,6 @@
 echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
 echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
 
-echo "SHOGGLE_TWEET_CONSUMER_KEY: $SHOGGLE_TWEET_CONSUMER_KEY"
-echo "SHOGGLE_TWEET_CONSUMER_KEY_SECRET: $SHOGGLE_TWEET_CONSUMER_KEY_SECRET"
-
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
