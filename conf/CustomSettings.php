@@ -41,7 +41,7 @@ $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
 
-require_once "$IP/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
+require_once "/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 $wgShoogleTweetConsumerKey = "$SHOGGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOGGLE_TWEET_CONSUMER_KEY_SECRET";
 
