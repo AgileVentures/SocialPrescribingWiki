@@ -1,0 +1,3 @@
+[submodule "extensions/mediawiki-shoogletweet"]
+	path = extensions/mediawiki-shoogletweet
+	url = https://github.com/schinken/mediawiki-shoogletweet
