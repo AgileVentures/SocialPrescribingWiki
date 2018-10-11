@@ -85,6 +85,10 @@ wfLoadExtension( 'ImageMap' );
 
 wfLoadExtension( 'Cite' );
 
+## Wiki SEO
+
+wfLoadExtension( 'WikiSEO' );
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
