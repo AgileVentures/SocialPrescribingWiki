@@ -44,7 +44,26 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
+## Video embed
 wfLoadExtension( 'EmbedVideo' );
+
+## ConfirmEdit
+$RECAPTCHA_SITE_KEY = getenv('RECAPTCHA_SITE_KEY');
+$RECAPTCHA_SECRET_KEY = getenv('RECAPTCHA_SECRET_KEY');
+
+wfLoadExtension( 'ConfirmEdit' );
+
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+$wgCaptchaClass = 'ReCaptchaNoCaptcha';
+$wgReCaptchaSiteKey = "$RECAPTCHA_SITE_KEY";
+$wgReCaptchaSecretKey = "$RECAPTCHA_SECRET_KEY";
+
+$wgCaptchaTriggers['edit'] = false;
+$wgCaptchaTriggers['create'] = false;
+$wgCaptchaTriggers['addurl'] = false;
+$wgCaptchaTriggers['createaccount'] = true;
+$wgCaptchaTriggers['badlogin'] = true;
+
 wfLoadExtension( 'Moderation' );
 
 $wgModerationNotificationEnable = true;
