@@ -36,7 +36,7 @@ $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderat
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
 
 
-require_once "/custom-extensions/mediawiki-shoogletweet/ShoogleTweet.php";
+require_once "/var/www/html/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
 
 $SHOOGLE_TWEET_CONSUMER_KEY = getenv('SHOOGLE_TWEET_CONSUMER_KEY');
 $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET');
@@ -44,7 +44,7 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
-// require_once "/custom-extensions/Moderation/Moderation.php";
+wfLoadExtension( 'EmbedVideo' );
 wfLoadExtension( 'Moderation' );
 
 $wgModerationNotificationEnable = true;
