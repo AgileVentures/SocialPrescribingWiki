@@ -44,7 +44,8 @@ $SHOOGLE_TWEET_CONSUMER_KEY_SECRET = getenv('SHOOGLE_TWEET_CONSUMER_KEY_SECRET')
 $wgShoogleTweetConsumerKey = "$SHOOGLE_TWEET_CONSUMER_KEY";
 $wgShoogleTweetConsumerKeySecret = "$SHOOGLE_TWEET_CONSUMER_KEY_SECRET";
 
-require_once "/custom-extensions/Moderation/Moderation.php";
+// require_once "/custom-extensions/Moderation/Moderation.php";
+wfLoadExtension( 'Moderation' );
 
 $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
