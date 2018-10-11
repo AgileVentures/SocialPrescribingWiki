@@ -31,3 +31,7 @@ $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automode
 $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
+
+require_once "$IP/extensions/mediawiki-shoogletweet/ShoogleTweet.php";
+$wgShoogleTweetConsumerKey = "$SHOGGLE_TWEET_CONSUMER_KEY";
+$wgShoogleTweetConsumerKeySecret = "$SHOGGLE_TWEET_CONSUMER_KEY_SECRET";
