@@ -16,7 +16,9 @@ Current Status
 
 We're trying to migrate from bitnami/azure to a dokku/azure deployment process to make future upgrades to the underlying mediawiki software easier, as well as ensuring that all the configuration for the system is versioned.
 
-We're working on organising our documentation which can currently be found in the [docs](/docs) folder in this repo
+We're working on organising our documentation which can currently be found in the [docs](/docs) folder in this repo.
+
+High level work is organised in a [Trello board](https://trello.com/b/5J4lZIaT/hlp-wiki) and lower level technical details are managed in the [issues](https://github.com/AgileVentures/SocialPrescribingWiki/issues) of this repo.
 
 To get the app up on a dokku system 
 -----------------------------------
