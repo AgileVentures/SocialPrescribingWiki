@@ -1,0 +1,1 @@
+parsoidConfig.setMwApi({ uri: 'http://develop-official.hlpwiki.agileventures.org/api.php', prefix: 'localhost', domain: 'localhost' });
