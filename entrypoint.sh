@@ -31,4 +31,5 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
 
+service parsoid start
 exec "$@"
