@@ -32,4 +32,5 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 fi
 
 service parsoid start
+apachectl -e info -D FOREGROUND
 exec "$@"

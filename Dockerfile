@@ -14,4 +14,4 @@ COPY extensions /var/www/html/extensions
 
 EXPOSE 80 443 8142
 ENTRYPOINT ["/dokku-entrypoint.sh"]
-CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
+# CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
