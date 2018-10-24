@@ -4,3 +4,6 @@
 [submodule "extensions/Moderation"]
 	path = extensions/Moderation
 	url = https://github.com/edwardspec/mediawiki-moderation.git
+[submodule "extensions/VisualEditor"]
+	path = extensions/VisualEditor
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/VisualEditor.git
