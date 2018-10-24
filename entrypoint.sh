@@ -5,7 +5,7 @@ set -e
 : ${MEDIAWIKI_ADMIN_USER:=Admin}
 : ${MEDIAWIKI_ADMIN_PASS:=admin12345}
 : ${MEDIAWIKI_UPDATE:=false}
-# php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
+# php maintenance/changePassword.php --user=Admin --password=secret1234 --conf ./LocalSettings.php
 
 
 echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
@@ -34,15 +34,16 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
 fi
+
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
 
-chown -R www-data: .
-chmod 755 images
+# chown -R www-data: .
+# chmod 755 images
 
-# service parsoid start
-# apachectl -e info -D FOREGROUND
+service parsoid start
+apachectl -e info -D FOREGROUND
 exec "$@"
