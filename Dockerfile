@@ -1,11 +1,10 @@
 FROM mediawiki:1.31
-RUN apt-get update -qq && apt-get install -y build-essential \
-    apt-utils apt-transport-https lsb-release gnupg
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update -qq && apt-get install -y nodejs
-RUN npm install -g parsoid
-COPY parsoid /var/www/html/mediawiki/parsoid
-# RUN echo "parsoid copied modified, start long build process" && sleep 1200 && echo "Long build process finished"
+
+RUN apt-get update -qq && apt-get install -y software-properties-common apt-transport-https
+RUN apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org/debian jessie-mediawiki main"
+RUN apt-get update -qq && apt-get install -y parsoid --allow-unauthenticated
+
+COPY parsoid /etc/mediawiki/parsoid
 
 COPY conf /conf
 
