@@ -1,4 +1,13 @@
+#!/bin/bash
+
+set -e
+
+: ${MEDIAWIKI_ADMIN_USER:=Admin}
+: ${MEDIAWIKI_ADMIN_PASS:=admin12345}
+: ${MEDIAWIKI_UPDATE:=false}
 # php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
+
+
 echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
 echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
 
@@ -30,6 +39,9 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
+
+chown -R www-data: .
+chmod 755 images
 
 service parsoid start
 apachectl -e info -D FOREGROUND
