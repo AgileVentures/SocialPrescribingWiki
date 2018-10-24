@@ -43,6 +43,6 @@ fi
 chown -R www-data: .
 chmod 755 images
 
-service parsoid start
-apachectl -e info -D FOREGROUND
+# service parsoid start
+# apachectl -e info -D FOREGROUND
 exec "$@"
