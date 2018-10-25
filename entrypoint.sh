@@ -1,17 +1,9 @@
 #!/bin/bash
 
-set -e
-
-: ${MEDIAWIKI_ADMIN_USER:=Admin}
-: ${MEDIAWIKI_ADMIN_PASS:=admin12345}
-: ${MEDIAWIKI_UPDATE:=false}
-
-
-echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
-echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
-
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
+	echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
+	echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
 	php maintenance/install.php \
 		--confpath /var/www/html \
 		--dbname "$MEDIAWIKI_DB_NAME" \
@@ -32,7 +24,7 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-				php maintenance/changePassword.php --user=Admin --password=secret1234 --conf ./LocalSettings.php
+				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
