@@ -2,8 +2,6 @@
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
-	echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
-	echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
 	php maintenance/install.php \
 		--confpath /var/www/html \
 		--dbname "$MEDIAWIKI_DB_NAME" \
@@ -33,7 +31,7 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
 
-# chmod 755 images
+chmod 755 images
 
 service parsoid start
 apachectl -e info -D FOREGROUND
