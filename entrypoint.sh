@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
@@ -25,7 +25,6 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
-echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
@@ -35,4 +34,5 @@ chmod 755 images
 
 service parsoid start
 apachectl -e info -D FOREGROUND
+
 exec "$@"
