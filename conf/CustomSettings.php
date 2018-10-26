@@ -18,7 +18,6 @@ if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
 }
 $wgGroupPermissions['moderator']['editinterface'] = true;
-$wgGroupPermissions['user']['editinterface'] = true;
 $wgDisableUploads = false;
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $wgFooterIcons['poweredby']['myicon'] = array(
