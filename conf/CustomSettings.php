@@ -102,7 +102,7 @@ $wgHiddenPrefs[] = 'visualeditor-enable';
 $wgVirtualRestConfig['modules']['parsoid'] = array(
         // URL to the Parsoid instance
         // Use port 8142 if you use the Debian package
-        'url' => 'https://develop-official.hlpwiki.agileventures.org:8142',
+        'url' => 'http://develop-official.hlpwiki.agileventures.org:8142',
         // Parsoid "domain", see below (optional)
         'domain' => 'localhost',
         //Parsoid "prefix", see below (optional)
