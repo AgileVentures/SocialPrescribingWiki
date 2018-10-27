@@ -13,6 +13,7 @@ $wgDevelopmentWarnings = true;
 $wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
+$wgEnableUploads    = true;
 
 if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
