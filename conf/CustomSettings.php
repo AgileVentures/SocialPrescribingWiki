@@ -104,7 +104,7 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
         // Use port 8142 if you use the Debian package
         'url' => 'https://develop-official.hlpwiki.agileventures.org:8142',
         // Parsoid "domain", see below (optional)
-        'domain' => 'localhost',
+        // 'domain' => 'localhost',
         //Parsoid "prefix", see below (optional)
 );
 
