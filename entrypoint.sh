@@ -28,6 +28,7 @@ fi
 
 /composer-install.sh
 php composer.phar require mediawiki/semantic-media-wiki "~3.0" --update-no-dev
+php setupStore.php 
 
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
