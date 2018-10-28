@@ -1,6 +1,6 @@
 FROM mediawiki:1.31
 
-RUN apt-get update -qq && apt-get install wget
+RUN apt-get update -qq && apt-get install -y wget zip
 
 COPY conf /conf
 
