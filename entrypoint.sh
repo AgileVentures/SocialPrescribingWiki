@@ -24,10 +24,11 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-				/composer-install.sh
-				php composer.phar require mediawiki/semantic-media-wiki "~3.0" --update-no-dev
-				php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
+
+/composer-install.sh
+php composer.phar require mediawiki/semantic-media-wiki "~3.0" --update-no-dev
+php composer.phar update --no-dev
 
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
