@@ -4,10 +4,9 @@ RUN apt-get update -qq && apt-get install -y wget zip
 
 COPY conf /conf
 
-COPY dokku-entrypoint.sh /dokku-entrypoint.sh
-COPY entrypoint.sh /entrypoint.sh
-COPY composer-install.sh /composer-install.sh
-COPY composer.local.json /composer.local.json
+COPY dokku-entrypoint.sh entrypoint.sh \ 
+     composer-install.sh composer.local.json \ 
+     install-update-php-dependencies.sh /
 COPY extensions /var/www/html/extensions
 
 EXPOSE 80 443

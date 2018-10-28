@@ -27,8 +27,7 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 fi
 
 /composer-install.sh
-php composer.phar require mediawiki/semantic-media-wiki "3.0.0" --update-no-dev
-php composer.phar update --no-dev
+/install-update-php-dependencies.sh
 
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
