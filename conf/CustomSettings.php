@@ -10,6 +10,8 @@ $wgDebugToolbar = true;
 $wgShowDebug = true;
 $wgDevelopmentWarnings = true;
 
+$wgUseSiteCss = true;
+
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
