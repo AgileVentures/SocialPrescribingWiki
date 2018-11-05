@@ -14,8 +14,6 @@ $wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 
-$wgUseImageMagick = true;
-$wgImageMagickConvertCommand = "/usr/bin/convert";
 
 if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
@@ -87,6 +85,8 @@ $wgDefaultUserOptions['wikieditor-publish'] = 1;
 ## ImageMap
 
 wfLoadExtension( 'ImageMap' );
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
 
 ## Cite Extension
 
