@@ -11,6 +11,7 @@ $wgShowDebug = true;
 $wgDevelopmentWarnings = true;
 
 $wgUseSiteCss = true;
+$wgAllowSiteCSSOnRestrictedPages = true;
 
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
