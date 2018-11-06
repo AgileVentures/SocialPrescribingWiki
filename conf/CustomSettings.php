@@ -6,7 +6,7 @@ ini_set( 'display_errors', 1 );
 @include('/app/LocalSettings.php');
 
 $wgShowExceptionDetails = true;
-$wgDebugToolbar = true;
+// $wgDebugToolbar = true;
 $wgShowDebug = true;
 $wgDevelopmentWarnings = true;
 
