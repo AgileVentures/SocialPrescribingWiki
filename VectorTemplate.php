@@ -55,8 +55,8 @@ class VectorTemplate extends BaseTemplate
         $this->getSkin()->getTitle()->getPageViewLanguage()->getHtmlCode();
 
         // Output HTML Page
-				$this->html( 'headelement' );
-				?>
+        $this->html('headelement');
+        ?>
 				<div id="hlp-banner">
 					<div id="block-mhl-hlp-mhl-hlp-logo" class="block block-mhl-hlp">
 						<div class="block-inner">
@@ -71,17 +71,14 @@ class VectorTemplate extends BaseTemplate
 				<div id="mw-head-base" class="noprint"></div>
 				<div id="content" class="mw-body" role="main">
 								<a id="top"></a>
-			<?php
+								<?php
 if ($this->data['sitenotice']) {
-            echo Html::rawElement('div',
-                [
-                    'id' => 'siteNotice',
-                    'class' => 'mw-body-content',
-                ],
-                // Raw HTML
-                $this->get('sitenotice')
-            );
-        }
+            		?>
+                  <div id="siteNotice" class="mw-body-content"><?php $this->html('sitenotice')?></div>
+<?php
+}
+?>
+
         if (is_callable([$this, 'getIndicators'])) {
             echo $this->getIndicators();
         }
