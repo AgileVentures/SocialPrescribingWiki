@@ -10,6 +10,9 @@ $wgDebugToolbar = true;
 $wgShowDebug = true;
 $wgDevelopmentWarnings = true;
 
+$wgSitename      = "Mediawiki official Social Prescribing and Self Care Wiki";
+$wgMetaNamespace = "Mediawiki official Social Prescribing and Self Care Wiki";
+
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
