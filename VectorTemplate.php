@@ -72,16 +72,16 @@ class VectorTemplate extends BaseTemplate
 				<div id="content" class="mw-body" role="main">
 								<a id="top"></a>
 								<?php
-if ($this->data['sitenotice']) {
-            		?>
-                  <div id="siteNotice" class="mw-body-content"><?php $this->html('sitenotice')?></div>
-<?php
-}
-?>
-
+				if ($this->data['sitenotice']) {
+					?>				
+					<div id="siteNotice" class="mw-body-content"><?php $this->html('sitenotice')?></div>
+				<?php
+        }
+        ?>
+				<?php
         if (is_callable([$this, 'getIndicators'])) {
             echo $this->getIndicators();
-        }
+				}
         // Loose comparison with '!=' is intentional, to catch null and false too, but not '0'
         if ($this->data['title'] != '') {
             echo Html::rawElement('h1',
