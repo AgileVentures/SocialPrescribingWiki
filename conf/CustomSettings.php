@@ -5,10 +5,13 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
-$wgShowExceptionDetails = true;
-$wgDebugToolbar = true;
-$wgShowDebug = true;
-$wgDevelopmentWarnings = true;
+// $wgShowExceptionDetails = true;
+// $wgDebugToolbar = true;
+// $wgShowDebug = true;
+// $wgDevelopmentWarnings = true;
+
+$wgUseSiteCss = true;
+$wgAllowSiteCSSOnRestrictedPages = true;
 
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
