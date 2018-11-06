@@ -17,13 +17,13 @@ $wgEmailAuthentication = true;
 $wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
+$wgEnableUploads    = true;
 
 if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
     $wgGroupPermissions['*']['edit'] = false;
 }
 $wgGroupPermissions['moderator']['editinterface'] = true;
 $wgGroupPermissions['user']['editinterface'] = true;
-$wgDisableUploads = false;
 
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
