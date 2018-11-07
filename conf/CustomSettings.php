@@ -126,3 +126,6 @@ $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
 
+## Semantic Extension
+enableSemantics( 'healthylondon.org' );
+

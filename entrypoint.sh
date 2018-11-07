@@ -25,6 +25,10 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
 fi
+
+/composer-install.sh
+/install-update-php-dependencies.sh
+
 echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
