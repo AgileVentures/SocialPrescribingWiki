@@ -1,3 +1,5 @@
+Database
+--------
 
 ssh into the server you want to grab data from, and this command will create the backup
 
@@ -24,3 +26,19 @@ Stream a backup of db to a new instance
 ```
 ssh -t hlp-dokku mariadb:import mediawiki_official < backup.sql
 ```
+
+FileSystem
+----------
+
+grab the files from production
+
+```
+~/apps/mediawiki/htdocs$ php maintenance/dumpUploads.php | xargs tar cf backup_files.tar
+```
+
+pull the tar down locally
+
+```
+scp hlpwiki:/home/bitnami/apps/mediawiki/htdocs/backup_files.tar .
+```
+
