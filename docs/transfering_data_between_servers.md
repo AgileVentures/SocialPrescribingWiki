@@ -41,4 +41,20 @@ pull the tar down locally
 ```
 scp hlpwiki:/home/bitnami/apps/mediawiki/htdocs/backup_files.tar .
 ```
+ssh into the box you want to transfer the files to and create a directory like so:
 
+```
+sudo mkdir -p  /var/lib/dokku/data/storage/mediawiki_official
+```
+
+change the permissions like so:
+
+```
+sudo chown -R dokku:dokku /var/lib/dokku/data/storage/mediawiki_official
+```
+Notes from dokku persistent storage documentation:
+
+```
+# For dockerfile deploys, substitute the user and group id in use within the image
+chown -R 32767:32767 /var/lib/dokku/data/storage/mediawiki_official
+```
