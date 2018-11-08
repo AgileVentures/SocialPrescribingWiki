@@ -15,6 +15,8 @@ COPY dokku-entrypoint.sh entrypoint.sh \
      install-update-php-dependencies.sh /
 COPY extensions /var/www/html/extensions
 COPY VectorTemplate.php /var/www/html/skins/Vector/includes/VectorTemplate.php
+COPY apache-virtual-host.conf /etc/apache2/sites-enabled/000-default.conf
+
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
 # CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
