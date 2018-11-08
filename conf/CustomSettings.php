@@ -5,10 +5,17 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
-$wgShowExceptionDetails = true;
-$wgDebugToolbar = true;
-$wgShowDebug = true;
-$wgDevelopmentWarnings = true;
+// $wgShowExceptionDetails = true;
+// $wgDebugToolbar = true;
+// $wgShowDebug = true;
+// $wgDevelopmentWarnings = true;
+
+$wgUseSiteCss = true;
+$wgAllowSiteCSSOnRestrictedPages = true;
+
+$wgEnableUserEmail     = true;
+$wgEnotifWatchlist     = true; # UPO
+$wgEmailAuthentication = true;
 
 $wgLogo               = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
@@ -19,8 +26,20 @@ $wgEnableUploads    = true;
 //     $wgGroupPermissions['*']['edit'] = false;
 // }
 $wgGroupPermissions['moderator']['editinterface'] = true;
-$wgDisableUploads = false;
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
+$SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
+
+$wgSMTP = [
+    'host'     => 'ssl://smtp.sendgrid.net',
+    'IDHost'   => 'sendgrid.net',
+    'port'     => '465',
+    'auth'     => true,
+    'username' => 'apikey',
+    'password' => $SENDGRID_API_KEY_PASSWORD,
+];
+
+$wgDefaultUserOptions['enotifwatchlistpages'] = true;
+
 $wgFooterIcons['poweredby']['myicon'] = array(
     "src" => "https://dl.dropbox.com/s/1kekg96rkndea64/customized-by-agileventures-176wide.png?dl=1",
     "url" => "http://nonprofits.agileventures.org/",
@@ -132,4 +151,7 @@ $wgGroupPermissions['checkuser']['moderation-checkuser'] = false; # Don't let ch
 $wgModerationNotificationEnable = true;
 $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
+
+## Semantic Extension
+enableSemantics( 'healthylondon.org' );
 

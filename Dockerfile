@@ -6,13 +6,15 @@ RUN apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org
 RUN apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthenticated
 
 COPY parsoid /etc/mediawiki/parsoid
+RUN apt-get update -qq && apt-get install -y wget zip
 
 COPY conf /conf
 
-COPY dokku-entrypoint.sh /dokku-entrypoint.sh
-COPY entrypoint.sh /entrypoint.sh
+COPY dokku-entrypoint.sh entrypoint.sh \ 
+     composer-install.sh composer.local.json \ 
+     install-update-php-dependencies.sh /
 COPY extensions /var/www/html/extensions
-
-EXPOSE 80 443 8142
+COPY VectorTemplate.php /var/www/html/skins/Vector/includes/VectorTemplate.php
+EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
 # CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
