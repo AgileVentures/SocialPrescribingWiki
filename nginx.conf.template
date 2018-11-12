@@ -6,7 +6,6 @@ server {
   error_log   /var/log/nginx/hlpwiki-develop-error.log;
 
   location    / {
-    client_max_body_size 2M;
     gzip on;
     gzip_min_length  1100;
     gzip_buffers  4 32k;
@@ -400,6 +399,9 @@ server {
 
   keepalive_timeout   70;
   
+  location     /index.php/Special:Upload {
+    client_max_body_size 2M;
+  }
 
   location    / {
 
