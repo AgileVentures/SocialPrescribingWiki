@@ -17,15 +17,12 @@ $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
 
-$wgLogo               = "";
+$wgUploadDirectory  = "/storage/images"; 
+$wgLogo             = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 $wgEnableUploads    = true;
 
-// if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
-//     $wgGroupPermissions['*']['edit'] = false;
-// }
-$wgGroupPermissions['moderator']['editinterface'] = true;
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
 
@@ -46,6 +43,8 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "alt" => "Customized by AgileVentures."
 );
 
+# InstantCommons allows wiki to use images from http://commons.wikimedia.org
+$wgUseInstantCommons  = true;
 
 $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
@@ -131,6 +130,8 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 ## ImageMap
 
 wfLoadExtension( 'ImageMap' );
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
 
 ## Cite Extension
 
@@ -144,6 +145,9 @@ wfLoadExtension( 'WikiSEO' );
 
 wfLoadExtension( 'Moderation' );
 
+$wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['createpage'] = false;
+$wgGroupPermissions['moderator']['editinterface'] = true;
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
 $wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
