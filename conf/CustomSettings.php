@@ -22,11 +22,6 @@ $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 $wgEnableUploads    = true;
 
-if (getenv('MEDIAWIKI_DISABLE_ANONYMOUS_EDIT')) {
-    $wgGroupPermissions['*']['edit'] = false;
-}
-$wgGroupPermissions['moderator']['editinterface'] = true;
-$wgGroupPermissions['user']['editinterface'] = true;
 
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
@@ -118,6 +113,9 @@ wfLoadExtension( 'WikiSEO' );
 
 wfLoadExtension( 'Moderation' );
 
+$wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['createpage'] = false;
+$wgGroupPermissions['moderator']['editinterface'] = true;
 $wgGroupPermissions['sysop']['moderation'] = true; # Allow sysops to use Special:Moderation
 $wgGroupPermissions['sysop']['skip-moderation'] = true; # Allow sysops to skip moderation
 $wgGroupPermissions['bot']['skip-moderation'] = true; # Allow bots to skip moderation
