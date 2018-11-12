@@ -18,6 +18,7 @@ $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
 
 $wgUploadDirectory  = "/storage/images"; 
+$wgUploadPath       = "/storage/images"; 
 $wgLogo             = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
