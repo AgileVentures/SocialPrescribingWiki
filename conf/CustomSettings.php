@@ -22,7 +22,6 @@ $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 $wgEnableUploads    = true;
 
-
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
 
@@ -102,6 +101,8 @@ $wgDefaultUserOptions['wikieditor-publish'] = 1;
 ## ImageMap
 
 wfLoadExtension( 'ImageMap' );
+$wgUseImageMagick = true;
+$wgImageMagickConvertCommand = "/usr/bin/convert";
 
 ## Cite Extension
 
