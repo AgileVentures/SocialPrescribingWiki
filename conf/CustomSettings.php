@@ -17,8 +17,8 @@ $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
 
-$wgUploadDirectory = "/var/lib/dokku/data/storage/mediawiki_official";
-$wgLogo               = "";
+$wgUploadDirectory  = "/storage";
+$wgLogo             = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 $wgEnableUploads    = true;
