@@ -5,10 +5,10 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
-// $wgShowExceptionDetails = true;
-// $wgDebugToolbar = true;
-// $wgShowDebug = true;
-// $wgDevelopmentWarnings = true;
+$wgShowExceptionDetails = true;
+$wgDebugToolbar = true;
+$wgShowDebug = true;
+$wgDevelopmentWarnings = true;
 
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
@@ -18,6 +18,7 @@ $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
 
 $wgUploadDirectory  = "/storage/images"; 
+
 $wgLogo             = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
