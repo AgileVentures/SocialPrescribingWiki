@@ -43,6 +43,8 @@ $wgFooterIcons['poweredby']['myicon'] = array(
     "alt" => "Customized by AgileVentures."
 );
 
+# InstantCommons allows wiki to use images from http://commons.wikimedia.org
+$wgUseInstantCommons  = true;
 
 $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
