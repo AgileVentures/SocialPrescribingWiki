@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org
 RUN apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthenticated
 
 COPY parsoid /etc/mediawiki/parsoid
-RUN apt-get update -qq && apt-get install -y wget zip sed
+RUN apt-get update -qq && apt-get install -y wget zip
 
 COPY conf /conf
 
