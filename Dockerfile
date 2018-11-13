@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org
 RUN apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthenticated
 
 COPY parsoid /etc/mediawiki/parsoid
-RUN apt-get update -qq && apt-get install -y wget zip
+RUN apt-get update -qq && apt-get install -y wget zip sed
 
 COPY conf /conf
 
@@ -22,4 +22,4 @@ RUN ln -s /storage/images /var/www/html/images
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
-# CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
+CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]

@@ -28,6 +28,7 @@ fi
 
 /composer-install.sh
 /install-update-php-dependencies.sh
+sed -i '/$MEDIAWIKI_SITE_SERVER/c\' . $MEDIAWIKI_SITE_SERVER /etc/mediawiki/parsoid/config.yaml
 
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
@@ -37,6 +38,5 @@ fi
 chmod 755 images
 
 service parsoid start
-apachectl -e info -D FOREGROUND
 
 exec "$@"
