@@ -1,7 +1,5 @@
-# php maintenance/changePassword.php --user=$MEDIAWIKI_ADMIN_USER --password=secret
-echo "MEDIAWIKI_ADMIN_USER: $MEDIAWIKI_ADMIN_USER"
-echo "MEDIAWIKI_ADMIN_PASS: $MEDIAWIKI_ADMIN_PASS"
-
+#!/bin/bash
+set -x
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
@@ -24,15 +22,20 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
+				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
 /composer-install.sh
 /install-update-php-dependencies.sh
 
-echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
+
+chmod 755 images
+
+service parsoid start
+apachectl -e info -D FOREGROUND
 
 exec "$@"
