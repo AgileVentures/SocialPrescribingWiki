@@ -59,6 +59,10 @@ git push azure-develop master
 dokku  domains:add hlpwiki hlpwiki.agileventures.org 
 ```
 
+Azure will need adjusting too, e.g.
+
+![](https://dl.dropbox.com/s/oieozci4jnturm3/Screenshot%202018-11-13%2013.54.34.png?dl=0)
+
 5. Enabling https
 
 ```
