@@ -17,7 +17,6 @@ echo 'export ' . implode(' ', [
     'MEDIAWIKI_DB_PASSWORD=' . $DATABASE_URL['pass'],
     'MEDIAWIKI_DB_NAME=' . trim($DATABASE_URL['path'], '/'),
     'MEDIAWIKI_UPDATE=true',
-    'MEDIAWIKI_SITE_SERVER=https://develop-official.hlpwiki.agileventures.org',
     'MEDIAWIKI_RESTBASE_URL=',
 ]);
 
