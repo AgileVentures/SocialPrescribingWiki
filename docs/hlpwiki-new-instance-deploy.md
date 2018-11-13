@@ -56,7 +56,7 @@ git push azure-develop master
 4. Set up domains
 
 ```
-dokku  domains:add hlpwiki-production production.hlpwiki.agileventures.org 
+dokku  domains:add hlpwiki hlpwiki.agileventures.org 
 ```
 
 5. Enabling https
