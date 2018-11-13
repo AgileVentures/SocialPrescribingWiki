@@ -1,6 +1,6 @@
-To deploy the official mediawiki onto dokku and setup with https we need to do the following:
+To deploy the an hlp instance on to dokku and setup with https we need to do the following:
 
-1. instructions modified from https://github.com/kingsquare/mediawiki-dokku  
+1. create app and associated filesystem/db
 
 (assumes you are logged into the box dokku is running on)
 (this run through via dokku 0.12.7)
@@ -56,14 +56,22 @@ git push azure-develop master
 4. Set up domains
 
 ```
-ssh dokku@nhs-dokku.eastus.cloudapp.azure.com domains:add hlpwiki-production production.hlpwiki.agileventures.org 
+dokku  domains:add hlpwiki-production production.hlpwiki.agileventures.org 
 ```
 
 5. Enabling https
 
-6. uploading db 
+```
+dokku config:set --no-restart hlpwiki DOKKU_LETSENCRYPT_EMAIL=hlpwikiadmin@agileventures.org
+dokku letsencrypt hlpwiki
+dokku letsencrypt:auto-renew hlpwiki
+```
 
-7. uploading file system
+6. Transfering data in
+
+see [transfering_data_between_servers.md](transfering_data_between_servers.md)
+
+
 
  
 
