@@ -79,7 +79,12 @@ dokku config:set hlpwiki-production SHOOGLE_TWEET_CONSUMER_KEY=<CONSUMER_KEY> SH
 dokku config:set hlpwiki-production RECAPTCHA_SECRET_KEY=<SECRET_KEY> RECAPTCHA_SITE_KEY=<SITE_KEY>
 ```
 
-6. Transfering data in
+7. add proxy ports
+```
+dokku proxy:ports-add hlpwiki-production https:8142:8142
+```
+
+8. Transfering data in
 
 see [transfering_data_between_servers.md](transfering_data_between_servers.md)
 
