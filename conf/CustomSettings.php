@@ -5,24 +5,27 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
-$wgShowExceptionDetails = true;
-$wgDebugToolbar = true;
-$wgShowDebug = true;
-$wgDevelopmentWarnings = true;
+// $wgShowExceptionDetails = true;
+// $wgDebugToolbar = true;
+// $wgShowDebug = true;
+// $wgDevelopmentWarnings = true;
 
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
+
+$wgSitename      = "Social Prescribing and Self Care Wiki";
+$wgMetaNamespace = "Social Prescribing and Self Care Wiki";
 
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
 
 $wgUploadDirectory  = "/storage/images"; 
-$wgUploadPath       = "/images"; 
 $wgLogo             = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
 $wgPasswordSender   = "hlpwikiadmin@agileventures.org";
 $wgEnableUploads    = true;
+$wgFileExtensions[] = 'pdf';
 
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
@@ -99,6 +102,34 @@ $wgDefaultUserOptions['wikieditor-preview'] = 1;
 
 # Displays the Publish and Cancel buttons on the top right side
 $wgDefaultUserOptions['wikieditor-publish'] = 1;
+
+## Visual Editor
+
+wfLoadExtension( 'VisualEditor' );
+
+// Enable by default for everybody
+$wgDefaultUserOptions['visualeditor-enable'] = 1;
+
+// Optional: Set VisualEditor as the default for anonymous users
+// otherwise they will have to switch to VE
+// $wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
+
+// Don't allow users to disable it
+$wgHiddenPrefs[] = 'visualeditor-enable';
+
+// OPTIONAL: Enable VisualEditor's experimental code features
+#$wgDefaultUserOptions['visualeditor-enable-experimental'] = 1;
+
+## Parsoid service for Visual Editor
+
+$wgVirtualRestConfig['modules']['parsoid'] = array(
+        // URL to the Parsoid instance
+        // Use port 8142 if you use the Debian package
+        'url' => 'https://develop-official.hlpwiki.agileventures.org:8142',
+        // Parsoid "domain", see below (optional)
+        // 'domain' => 'localhost',
+        //Parsoid "prefix", see below (optional)
+);
 
 ## ImageMap
 
