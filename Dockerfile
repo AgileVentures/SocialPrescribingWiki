@@ -22,4 +22,4 @@ RUN ln -s /storage/images /var/www/html/images
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
-CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
+# CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
