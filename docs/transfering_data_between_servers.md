@@ -36,25 +36,30 @@ grab the files from production
 ~/apps/mediawiki/htdocs$ php maintenance/dumpUploads.php | xargs tar cf backup_files.tar
 ```
 
+note this may generated the following warnings:
+
+```
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+tar: images/2/21/Upload_file_button.png: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+```
+
 pull the tar down locally
 
 ```
 scp hlpwiki:/home/bitnami/apps/mediawiki/htdocs/backup_files.tar .
 ```
-ssh into the box you want to transfer the files to and create a directory like so:
+
+assuming that the directory where you want the files is available on the remote box, transfer the tar file to the remote box:
 
 ```
-sudo mkdir -p  /var/lib/dokku/data/storage/mediawiki_official
+scp backup_files.tar hlp-ssh:~/ # upload to user direcotory
+sudo mv backup_files.tar /var/lib/dokku/data/storage/hlpwiki/  # move to desired location
 ```
 
-change the permissions like so:
+then unpack the files:
 
 ```
-sudo chown -R dokku:dokku /var/lib/dokku/data/storage/mediawiki_official
-```
-Notes from dokku persistent storage documentation:
-
-```
-# For dockerfile deploys, substitute the user and group id in use within the image
-chown -R 32767:32767 /var/lib/dokku/data/storage/mediawiki_official
+cd /var/lib/dokku/data/storage/hlpwiki/
+sudo tar xf backup_files.tar
 ```
