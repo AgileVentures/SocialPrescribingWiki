@@ -1,9 +1,10 @@
 #!/bin/bash
 set -x
 
-sed -i '/$MEDIAWIKI_SITE_SERVER/c\' . $MEDIAWIKI_SITE_SERVER /etc/mediawiki/parsoid/config.yaml
+sed -i "/MEDIAWIKI_SITE_SERVER/c\uri: '$MEDIAWIKI_SITE_SERVER'/api.php" /etc/mediawiki/parsoid/config.yaml
 /composer-install.sh
 /install-update-php-dependencies.sh
+
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
