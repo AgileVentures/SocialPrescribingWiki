@@ -15,13 +15,13 @@ dokku config:set mediawiki environment=production
 ## Add Persistent storage (for uploads)
 
 # create storage for the app
-sudo mkdir -p  /host/location/mediawiki
+sudo mkdir -p  /var/lib/dokku/data/storage/mediawiki
 
 # ensure the dokku user has access to this directory
-sudo chown -R dokku:dokku /host/location/mediawiki
+sudo chown -R www-data:www-data /var/lib/dokku/data/storage/mediawiki
 
 # mount the directory into your app
-dokku storage:mount mediawiki /host/location/mediawiki:/data
+dokku storage:mount mediawiki /var/lib/dokku/data/storage/mediawiki:/storage
 
 ## Add database
 # Create a mariadb service with environment variables
@@ -36,9 +36,10 @@ dokku mariadb:link mediawiki mediawiki
 (assumes you are logged into the box dokku is running on)
 
 ```
-dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX
-dokku config:set mediawiki MEDIAWIKI_ADMIN_PASS=XXXXX
+dokku config:set mediawiki MEDIAWIKI_ADMIN_USER=XXXXX MEDIAWIKI_ADMIN_PASS=XXXXX
 ```
+
+**NOTE: The below is now specific to HLPWiki deploy - we're working on another Dockerfile for a vanilla installation**
 
 3. Git based deploy
 
