@@ -12,6 +12,7 @@ services:
       - # This is the only required parameter,
         # the URL of you MediaWiki API endpoint.
         uri: 'https://develop-official.hlpwiki.agileventures.org/api.php'
+        uri: 'https://production.hlpwiki.agileventures.org/api.php'
         # The "domain" is used for communication with Visual Editor
         # and RESTBase.  It defaults to the hostname portion of
         # the `uri` property below, but you can manually set it
