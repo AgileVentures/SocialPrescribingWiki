@@ -59,7 +59,7 @@ git push azure-develop master
 4. Set up domains
 
 ```
-ssh dokku@nhs-dokku.eastus.cloudapp.azure.com domains:add mediawiki_official develop-official.hlpwiki.agileventures.org 
+ssh dokku@nhs-dokku.eastus.cloudapp.azure.com domains:add mediawiki develop-.hlpwiki.agileventures.org 
 ```
 **Potential sticking points:**
 
