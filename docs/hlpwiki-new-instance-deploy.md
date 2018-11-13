@@ -37,6 +37,7 @@ dokku mariadb:link hlpwiki hlpwiki
 
 ```
 dokku config:set hlpwiki MEDIAWIKI_ADMIN_USER=XXXXX MEDIAWIKI_ADMIN_PASS=XXXXX
+dokku config:set hlpwiki MEDIAWIKI_SITE_SERVER=https://test.hlpwiki.agileventures.org
 ```
 
 3. Git based deploy
@@ -56,7 +57,7 @@ git push azure-develop master
 4. Set up domains
 
 ```
-dokku  domains:add hlpwiki hlpwiki.agileventures.org 
+dokku  domains:add hlpwiki test.hlpwiki.agileventures.org 
 ```
 
 Azure will need adjusting too, e.g.
