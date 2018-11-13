@@ -23,7 +23,6 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
 /composer-install.sh
@@ -37,6 +36,5 @@ fi
 chmod 755 images
 
 service parsoid start
-apachectl -e info -D FOREGROUND
 
 exec "$@"
