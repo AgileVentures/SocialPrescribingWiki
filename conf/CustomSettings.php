@@ -13,6 +13,9 @@ ini_set( 'display_errors', 1 );
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
 
+$wgSitename      = "Social Prescribing and Self Care Wiki";
+$wgMetaNamespace = "Social Prescribing and Self Care Wiki";
+
 $wgEnableUserEmail     = true;
 $wgEnotifWatchlist     = true; # UPO
 $wgEmailAuthentication = true;
