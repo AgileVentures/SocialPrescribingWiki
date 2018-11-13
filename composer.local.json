@@ -2,6 +2,7 @@
   "require": {
       "mediawiki/parser-hooks": "~1",
       "mediawiki/validator": "~2",
-      "mediawiki/semantic-media-wiki": "~3.0"
+      "mediawiki/semantic-media-wiki": "~3.0",
+      "tinymighty/wiki-seo": "1.2.2"
   }
 }
