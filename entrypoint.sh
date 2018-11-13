@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-sed -i "/MEDIAWIKI_SITE_SERVER/c\uri: '$MEDIAWIKI_SITE_SERVER'/api.php" /etc/mediawiki/parsoid/config.yaml
+sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
 /composer-install.sh
 /install-update-php-dependencies.sh
 
