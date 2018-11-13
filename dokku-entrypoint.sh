@@ -9,6 +9,8 @@ if (empty($DATABASE_URL['scheme'])) {
     exit;
 }
 
+$MEDIAWIKI_SITE_SERVER = getenv('MEDIAWIKI_SITE_SERVER'); 
+
 echo 'export ' . implode(' ', [
     'MEDIAWIKI_DB_TYPE=' . $DATABASE_URL['scheme'],
     'MEDIAWIKI_DB_HOST=' . $DATABASE_URL['host'],
@@ -16,6 +18,7 @@ echo 'export ' . implode(' ', [
     'MEDIAWIKI_DB_USER=' . $DATABASE_URL['user'],
     'MEDIAWIKI_DB_PASSWORD=' . $DATABASE_URL['pass'],
     'MEDIAWIKI_DB_NAME=' . trim($DATABASE_URL['path'], '/'),
+    'MEDIAWIKI_SITE_SERVER=' . $MEDIAWIKI_SITE_SERVER,
     'MEDIAWIKI_UPDATE=true',
     'MEDIAWIKI_RESTBASE_URL=',
 ]);

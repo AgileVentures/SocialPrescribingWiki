@@ -1,8 +1,6 @@
 #!/bin/bash
 set -x
 
-$MEDIAWIKI_SITE_SERVER = getenv('MEDIAWIKI_SITE_SERVER'); 
-
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 	php maintenance/install.php \
