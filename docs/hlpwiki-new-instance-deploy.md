@@ -75,13 +75,13 @@ dokku letsencrypt:auto-renew hlpwiki
 6. Over environment variables
 
 ```
-dokku config:set hlpwiki-production SHOOGLE_TWEET_CONSUMER_KEY=<CONSUMER_KEY> SHOOGLE_TWEET_CONSUMER_KEY_SECRET=<SECRET_KEY>
-dokku config:set hlpwiki-production RECAPTCHA_SECRET_KEY=<SECRET_KEY> RECAPTCHA_SITE_KEY=<SITE_KEY>
+dokku config:set hlpwiki SHOOGLE_TWEET_CONSUMER_KEY=<CONSUMER_KEY> SHOOGLE_TWEET_CONSUMER_KEY_SECRET=<SECRET_KEY>
+dokku config:set hlpwiki RECAPTCHA_SECRET_KEY=<SECRET_KEY> RECAPTCHA_SITE_KEY=<SITE_KEY>
 ```
 
 7. add proxy ports
 ```
-dokku proxy:ports-add hlpwiki-production https:8142:8142
+dokku proxy:ports-add hlpwiki https:8142:8142
 ```
 
 8. Transfering data in
