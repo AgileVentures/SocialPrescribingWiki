@@ -1,7 +1,12 @@
 #!/bin/bash
 set -x
 
+
+/composer-install.sh
+/install-update-php-dependencies.sh
+
 sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
+
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
@@ -28,8 +33,6 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
-/composer-install.sh
-/install-update-php-dependencies.sh
 
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
