@@ -5,6 +5,8 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
+$wgArticlePath = "/$1";
+
 // $wgShowExceptionDetails = true;
 // $wgDebugToolbar = true;
 // $wgShowDebug = true;
