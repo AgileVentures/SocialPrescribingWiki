@@ -40,8 +40,6 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
 
-chmod 755 images
-
 service parsoid start
 apachectl -e info -D FOREGROUND
 
