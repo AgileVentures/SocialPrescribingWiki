@@ -13,7 +13,10 @@ COPY conf /conf
 COPY dokku-entrypoint.sh entrypoint.sh \ 
      composer-install.sh composer.local.json \ 
      install-update-php-dependencies.sh /
+
+RUN cd /var/www/html/extensions && curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz| tar xz
 COPY extensions /var/www/html/extensions
+
 COPY VectorTemplate.php /var/www/html/skins/Vector/includes/VectorTemplate.php
 COPY nginx.conf.sigil /var/www/html
 
