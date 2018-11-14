@@ -5,6 +5,8 @@ ini_set( 'display_errors', 1 );
 
 @include('/app/LocalSettings.php');
 
+$wgArticlePath = "/$1";
+
 // $wgShowExceptionDetails = true;
 // $wgDebugToolbar = true;
 // $wgShowDebug = true;
@@ -36,7 +38,7 @@ $wgSMTP = [
     'port'     => '465',
     'auth'     => true,
     'username' => 'apikey',
-    'password' => $SENDGRID_API_KEY_PASSWORD,
+    'password' => "$SENDGRID_API_KEY_PASSWORD",
 ];
 
 $wgDefaultUserOptions['enotifwatchlistpages'] = true;

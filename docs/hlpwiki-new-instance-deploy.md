@@ -45,19 +45,19 @@ dokku config:set hlpwiki MEDIAWIKI_SITE_SERVER=https://test.hlpwiki.agileventure
 i) set remote on clone of AgileVentures/SocialPrescribingWiki
 
 ```
-git remote add hlpwiki-production dokku@nhs-dokku.eastus.cloudapp.azure.com:hlpwiki-production
+git remote add hlpwiki dokku@nhs-dokku.eastus.cloudapp.azure.com:hlpwiki
 ```
 
 ii) push up dockerfile via git
 
 ```
-git push azure-develop master
+git push hlpwiki master
 ```
 
 4. Set up domains
 
 ```
-dokku  domains:add hlpwiki test.hlpwiki.agileventures.org 
+dokku domains:add hlpwiki test.hlpwiki.agileventures.org 
 ```
 
 Azure will need adjusting too, e.g.
@@ -75,13 +75,13 @@ dokku letsencrypt:auto-renew hlpwiki
 6. Over environment variables
 
 ```
-dokku config:set hlpwiki-production SHOOGLE_TWEET_CONSUMER_KEY=<CONSUMER_KEY> SHOOGLE_TWEET_CONSUMER_KEY_SECRET=<SECRET_KEY>
-dokku config:set hlpwiki-production RECAPTCHA_SECRET_KEY=<SECRET_KEY> RECAPTCHA_SITE_KEY=<SITE_KEY>
+dokku config:set hlpwiki SHOOGLE_TWEET_CONSUMER_KEY=<CONSUMER_KEY> SHOOGLE_TWEET_CONSUMER_KEY_SECRET=<SECRET_KEY>
+dokku config:set hlpwiki RECAPTCHA_SECRET_KEY=<SECRET_KEY> RECAPTCHA_SITE_KEY=<SITE_KEY>
 ```
 
 7. add proxy ports
 ```
-dokku proxy:ports-add hlpwiki-production https:8142:8142
+dokku proxy:ports-add hlpwiki https:8142:8142
 ```
 
 8. Transfering data in
