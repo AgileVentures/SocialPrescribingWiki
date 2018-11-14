@@ -36,7 +36,7 @@ $wgSMTP = [
     'port'     => '465',
     'auth'     => true,
     'username' => 'apikey',
-    'password' => $SENDGRID_API_KEY_PASSWORD,
+    'password' => "$SENDGRID_API_KEY_PASSWORD",
 ];
 
 $wgDefaultUserOptions['enotifwatchlistpages'] = true;
