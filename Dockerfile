@@ -9,7 +9,7 @@ COPY parsoid /etc/mediawiki/parsoid
 RUN apt-get update -qq && apt-get install -y wget zip
 
 COPY --from=composer:1.7 /usr/bin/composer /usr/bin/composer
-RUN composer require mediawiki/semantic-media-wiki --update-no-dev
+RUN COMPOSER_ALLOW_SUPERUSER=true composer require mediawiki/semantic-media-wiki --update-no-dev
 RUN pear install net_smtp
 
 COPY conf /conf
@@ -19,7 +19,9 @@ COPY dokku-entrypoint.sh entrypoint.sh \
      install-update-php-dependencies.sh /
 COPY extensions /var/www/html/extensions
 COPY VectorTemplate.php /var/www/html/skins/Vector/includes/VectorTemplate.php
-COPY nginx.conf.sigil .htaccess /var/www/html/
+# COPY nginx.conf.sigil /var/www/html/
+
+COPY .htaccess /var/www/html/
 
 RUN ln -s /storage/images /var/www/html/images
 
