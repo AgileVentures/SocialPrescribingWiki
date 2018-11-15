@@ -75,6 +75,11 @@ assuming that the directory where you want the files is available on the remote 
 
 ```
 scp images.tar hlp-ssh:~/ # upload to user directory
+```
+
+then ssh into the remote server
+
+```
 sudo mv images.tar /var/lib/dokku/data/storage/hlpwiki/  # move to desired location
 ```
 
