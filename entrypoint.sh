@@ -44,6 +44,6 @@ sed -i '12 a RewriteEngine On' /etc/apache2/sites-available/000-default.conf
 sed -i '13 a RewriteRule ^/(.*):(.*) /index.php/$1:$2' /etc/apache2/sites-available/000-default.conf
 
 service parsoid start
-apachectl -e info -D FOREGROUND
+# apachectl -e info -D FOREGROUND
 
 exec "$@"
