@@ -149,7 +149,7 @@ wfLoadExtension( 'WikiSEO' );
 
 wfLoadExtension( 'CookieWarning' );
 $wgCookieWarningEnabled = true; 
-$wgCookieWarningMoreUrl = "/Cookie_Policy";
+$wgCookieWarningMoreUrl = "/Cookies_Policy";
 
 ## Moderation Extension
 
