@@ -1,6 +1,8 @@
 Database
 --------
 
+To grab a copy of the database depends on the server you are accessing
+
 ### dokku
 
 ```
@@ -29,6 +31,10 @@ Host hlpwiki
 HostName bitnami-mediawiki-8a65.cloudapp.net
 User bitnami
 ```
+
+Now to upload to another server
+
+### Dokku
 
 Stream a backup of db to a new instance
 
