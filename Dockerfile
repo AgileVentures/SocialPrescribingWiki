@@ -8,10 +8,6 @@ RUN apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthentica
 COPY parsoid /etc/mediawiki/parsoid
 RUN apt-get update -qq && apt-get install -y wget zip
 
-COPY --from=composer:1.7 /usr/bin/composer /usr/bin/composer
-RUN COMPOSER_ALLOW_SUPERUSER=true composer require mediawiki/semantic-media-wiki --update-no-dev
-RUN pear install net_smtp
-
 COPY conf /conf
 
 COPY dokku-entrypoint.sh entrypoint.sh \ 
