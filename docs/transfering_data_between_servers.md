@@ -1,6 +1,17 @@
 Database
 --------
 
+To grab a copy of the database depends on the server you are accessing
+### Download
+#### dokku
+
+```
+ssh hlp-dokku mariadb:export hlpwiki > backup.sql
+```
+
+#### bitnami (any raw install)
+
+
 ssh into the server you want to grab data from, and this command will create the backup
 
 ```
@@ -21,10 +32,15 @@ HostName bitnami-mediawiki-8a65.cloudapp.net
 User bitnami
 ```
 
+Now to upload to another server
+
+### Upload
+#### Dokku
+
 Stream a backup of db to a new instance
 
 ```
-ssh -t hlp-dokku mariadb:import mediawiki_official < backup.sql
+ssh hlp-dokku mariadb:import mediawiki_official < backup.sql
 ```
 
 FileSystem
@@ -58,7 +74,12 @@ scp hlpwiki:/home/bitnami/apps/mediawiki/htdocs/images.tar .
 assuming that the directory where you want the files is available on the remote box, transfer the tar file to the remote box:
 
 ```
-scp images.tar hlp-ssh:~/ # upload to user direcotory
+scp images.tar hlp-ssh:~/ # upload to user directory
+```
+
+then ssh into the remote server
+
+```
 sudo mv images.tar /var/lib/dokku/data/storage/hlpwiki/  # move to desired location
 ```
 
