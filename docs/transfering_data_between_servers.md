@@ -24,7 +24,7 @@ User bitnami
 Stream a backup of db to a new instance
 
 ```
-ssh -t hlp-dokku mariadb:import mediawiki_official < backup.sql
+ssh hlp-dokku mariadb:import mediawiki_official < backup.sql
 ```
 
 FileSystem
@@ -58,7 +58,7 @@ scp hlpwiki:/home/bitnami/apps/mediawiki/htdocs/images.tar .
 assuming that the directory where you want the files is available on the remote box, transfer the tar file to the remote box:
 
 ```
-scp images.tar hlp-ssh:~/ # upload to user direcotory
+scp images.tar hlp-ssh:~/ # upload to user directory
 sudo mv images.tar /var/lib/dokku/data/storage/hlpwiki/  # move to desired location
 ```
 
