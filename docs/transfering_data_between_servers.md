@@ -1,6 +1,15 @@
 Database
 --------
 
+### dokku
+
+```
+ssh hlp-dokku mariadb:export hlpwiki > backup.sql
+```
+
+### bitnami (any raw install)
+
+
 ssh into the server you want to grab data from, and this command will create the backup
 
 ```
