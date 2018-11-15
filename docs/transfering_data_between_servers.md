@@ -2,14 +2,14 @@ Database
 --------
 
 To grab a copy of the database depends on the server you are accessing
-
-### dokku
+### Download
+#### dokku
 
 ```
 ssh hlp-dokku mariadb:export hlpwiki > backup.sql
 ```
 
-### bitnami (any raw install)
+#### bitnami (any raw install)
 
 
 ssh into the server you want to grab data from, and this command will create the backup
@@ -34,7 +34,8 @@ User bitnami
 
 Now to upload to another server
 
-### Dokku
+### Upload
+#### Dokku
 
 Stream a backup of db to a new instance
 
