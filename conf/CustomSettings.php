@@ -143,9 +143,15 @@ $wgImageMagickConvertCommand = "/usr/bin/convert";
 
 wfLoadExtension( 'Cite' );
 
-## Wiki SEO
+## WikiSEO
 
 wfLoadExtension( 'WikiSEO' );
+
+## CookieWarning extension
+
+wfLoadExtension( 'CookieWarning' );
+$wgCookieWarningEnabled = true; 
+$wgCookieWarningMoreUrl = "/Cookies_Policy";
 
 ## Moderation Extension
 

@@ -4,7 +4,9 @@ RUN apt-get update -qq && apt-get install -y software-properties-common apt-tran
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org/debian jessie-mediawiki main" && \
     apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthenticated --no-install-recommends && \
-    mv ./images ./images-old && ln -s /storage/images ./ && rm -rf /var/lib/apt/lists/*
+    mv ./images ./images-old && ln -s /storage/images ./ && cd /var/www/html/extensions && \
+    curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz| tar xz && \ 
+    rm -rf /var/lib/apt/lists/*
 
 COPY parsoid /etc/mediawiki/parsoid
 COPY conf /conf
