@@ -153,6 +153,10 @@ wfLoadExtension( 'CookieWarning' );
 $wgCookieWarningEnabled = true; 
 $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
+## ArticleFeedbackv5 Instant Feedback System
+
+wfLoadExtension( 'ArticleFeedbackv5' );
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
