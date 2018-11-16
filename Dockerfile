@@ -13,7 +13,7 @@ COPY dokku-entrypoint.sh entrypoint.sh \
      install-update-php-dependencies.sh /
 COPY extensions extensions/
 COPY VectorTemplate.php skins/Vector/includes/VectorTemplate.php
-COPY nginx.config.sigil .htaccess ./
+COPY nginx.conf.sigil .htaccess ./
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
