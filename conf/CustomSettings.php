@@ -156,7 +156,7 @@ $wgCookieWarningMoreUrl = "/Cookies_Policy";
 ## ArticleFeedbackv5 Instant Feedback System
 
 wfLoadExtension( 'ArticleFeedbackv5' );
-
+$wgArticleFeedbackv5Categories = array( 'Book', 'Patient_advocacy' );
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
