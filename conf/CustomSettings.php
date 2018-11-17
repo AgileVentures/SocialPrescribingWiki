@@ -7,10 +7,10 @@ ini_set( 'display_errors', 1 );
 
 $wgArticlePath = "/$1";
 
-// $wgShowExceptionDetails = true;
-// $wgDebugToolbar = true;
-// $wgShowDebug = true;
-// $wgDevelopmentWarnings = true;
+$wgShowExceptionDetails = true;
+$wgDebugToolbar = true;
+$wgShowDebug = true;
+$wgDevelopmentWarnings = true;
 
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
@@ -157,6 +157,7 @@ $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
 wfLoadExtension( 'ArticleFeedbackv5' );
 $wgArticleFeedbackv5Categories = array( 'Book', 'Patient_advocacy' );
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
