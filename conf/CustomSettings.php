@@ -72,22 +72,22 @@ require_once "/var/www/html/extensions/ExtraLanguageLink/ExtraLanguageLink.php";
 
 wfLoadExtension( 'EmbedVideo' );
 
-## ConfirmEdit
-$RECAPTCHA_SITE_KEY = getenv('RECAPTCHA_SITE_KEY');
-$RECAPTCHA_SECRET_KEY = getenv('RECAPTCHA_SECRET_KEY');
+// ## ConfirmEdit
+// $RECAPTCHA_SITE_KEY = getenv('RECAPTCHA_SITE_KEY');
+// $RECAPTCHA_SECRET_KEY = getenv('RECAPTCHA_SECRET_KEY');
 
-wfLoadExtension( 'ConfirmEdit' );
+// wfLoadExtension( 'ConfirmEdit' );
 
-wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
-$wgCaptchaClass = 'ReCaptchaNoCaptcha';
-$wgReCaptchaSiteKey = "$RECAPTCHA_SITE_KEY";
-$wgReCaptchaSecretKey = "$RECAPTCHA_SECRET_KEY";
+// wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+// $wgCaptchaClass = 'ReCaptchaNoCaptcha';
+// $wgReCaptchaSiteKey = "$RECAPTCHA_SITE_KEY";
+// $wgReCaptchaSecretKey = "$RECAPTCHA_SECRET_KEY";
 
-$wgCaptchaTriggers['edit'] = false;
-$wgCaptchaTriggers['create'] = false;
-$wgCaptchaTriggers['addurl'] = false;
-$wgCaptchaTriggers['createaccount'] = true;
-$wgCaptchaTriggers['badlogin'] = true;
+// $wgCaptchaTriggers['edit'] = false;
+// $wgCaptchaTriggers['create'] = false;
+// $wgCaptchaTriggers['addurl'] = false;
+// $wgCaptchaTriggers['createaccount'] = true;
+// $wgCaptchaTriggers['badlogin'] = true;
 
 ## Load WikiEditor
 
