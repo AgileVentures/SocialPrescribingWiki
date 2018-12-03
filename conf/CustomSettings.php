@@ -153,6 +153,10 @@ wfLoadExtension( 'CookieWarning' );
 $wgCookieWarningEnabled = true; 
 $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
+## PdfHandler extension
+
+wfLoadExtension( 'PdfHandler' );
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
