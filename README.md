@@ -14,9 +14,17 @@ The wiki went live on May 4th 2017, and AgileVentures continues to host, maintai
 Current Status
 ==============
 
-We're trying to migrate from bitnami/azure to a dokku/azure deployment process to make future upgrades to the underlying mediawiki software easier, as well as ensuring that all the configuration for the system is versioned.
+We've migrated from bitnami/azure to a dokku/azure deployment process, which should make future upgrades to the underlying mediawiki software easier, as well as ensuring that all the configuration for the system is versioned.  The system architecture can now be represented like this:
+
+![](https://dl.dropbox.com/s/7xm2ut99h1wyic0/Screenshot%202018-11-16%2014.54.51.png?dl=0)
+
+Documentation
+=============
 
 We're working on organising our documentation which can currently be found in the [docs](/docs) folder in this repo.
+
+Development
+===========
 
 High level work is organised in a [Trello board](https://trello.com/b/5J4lZIaT/hlp-wiki) and lower level technical details are managed in the [issues](https://github.com/AgileVentures/SocialPrescribingWiki/issues) of this repo.
 

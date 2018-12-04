@@ -26,10 +26,6 @@ echo 'export ' . implode(' ', [
 EOPHP
 )
 
-# todo linked redis vars?
-
-# todo linked memcached vars?
-
 # custom image entrypoint
 echo "Trying custom entrypoint script..."
 if [ -f /app/dokku-entrypoint.sh -a -x /app/dokku-entrypoint.sh ]; then
