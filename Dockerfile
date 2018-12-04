@@ -19,4 +19,5 @@ COPY nginx.conf.sigil .htaccess ./
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
+
 CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
