@@ -153,6 +153,14 @@ wfLoadExtension( 'CookieWarning' );
 $wgCookieWarningEnabled = true; 
 $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
+## PdfHandler extension
+
+wfLoadExtension( 'PdfHandler' );
+$wgPdfProcessor = '/usr/bin/gs'; 
+$wgPdfPostProcessor = $wgImageMagickConvertCommand; // if defined via ImageMagick
+$wgPdfInfo = '/usr/bin/pdfinfo'; 
+$wgPdftoText = '/usr/bin/pdftotext';
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
