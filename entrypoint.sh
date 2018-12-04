@@ -1,7 +1,6 @@
 #!/bin/bash
 set -x
 
-
 /composer-install.sh
 /install-update-php-dependencies.sh
 
@@ -38,6 +37,7 @@ if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
 fi
+
 a2enmod rewrite
 sed -i '12 a RewriteEngine On' /etc/apache2/sites-available/000-default.conf
 sed -i '13 a RewriteRule ^/(.*):(.*) /index.php/$1:$2' /etc/apache2/sites-available/000-default.conf
