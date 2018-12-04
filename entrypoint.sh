@@ -31,7 +31,6 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
 
@@ -44,6 +43,5 @@ sed -i '12 a RewriteEngine On' /etc/apache2/sites-available/000-default.conf
 sed -i '13 a RewriteRule ^/(.*):(.*) /index.php/$1:$2' /etc/apache2/sites-available/000-default.conf
 
 service parsoid start
-apachectl -e info -D FOREGROUND
 
 exec "$@"
