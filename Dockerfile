@@ -5,7 +5,8 @@ RUN apt-get update -qq && apt-get install -y software-properties-common apt-tran
     apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org/debian jessie-mediawiki main" && \
     apt-get update -qq && apt-get install -y ghostscript poppler-utils nodejs parsoid --allow-unauthenticated --no-install-recommends && \
     mv ./images ./images-old && ln -s /storage/images ./ && cd /var/www/html/extensions && \
-    curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz| tar xz && \ 
+    curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz | tar xz && \
+    curl -L https://extdist.wmflabs.org/dist/extensions/MsUpload-REL1_31-d854ddf.tar.gz | tar xz && \
     rm -rf /var/lib/apt/lists/*
 
 COPY parsoid /etc/mediawiki/parsoid

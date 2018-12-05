@@ -161,6 +161,11 @@ $wgPdfPostProcessor = $wgImageMagickConvertCommand; // if defined via ImageMagic
 $wgPdfInfo = '/usr/bin/pdfinfo'; 
 $wgPdftoText = '/usr/bin/pdftotext';
 
+## MsUpload Extension 
+
+wfLoadExtension( 'MsUpload' );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
