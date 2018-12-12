@@ -168,7 +168,7 @@ $wgDefaultUserOptions['usebetatoolbar'] = 1;
 
 ## Recent Activity 
 
-wfLoadExtension( 'RecentActivity' );
+require_once "$IP/extensions/RecentActivity/RecentActivity.php";
 
 ## Moderation Extension
 
