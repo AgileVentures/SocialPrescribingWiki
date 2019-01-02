@@ -7,10 +7,10 @@ ini_set( 'display_errors', 1 );
 
 $wgArticlePath = "/$1";
 
-// $wgShowExceptionDetails = true;
-// $wgDebugToolbar = true;
-// $wgShowDebug = true;
-// $wgDevelopmentWarnings = true;
+$wgShowExceptionDetails = true;
+$wgDebugToolbar = true;
+$wgShowDebug = true;
+$wgDevelopmentWarnings = true;
 
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
