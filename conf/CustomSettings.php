@@ -166,6 +166,10 @@ $wgPdftoText = '/usr/bin/pdftotext';
 wfLoadExtension( 'MsUpload' );
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 
+
+## FeaturedFeeds Extension
+wfLoadExtension( 'FeaturedFeeds' );
+
 ## Moderation Extension
 
 wfLoadExtension( 'Moderation' );
