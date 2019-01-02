@@ -169,6 +169,16 @@ $wgDefaultUserOptions['usebetatoolbar'] = 1;
 
 ## FeaturedFeeds Extension
 wfLoadExtension( 'FeaturedFeeds' );
+$wgFeaturedFeeds = array(
+  'featured' => array(
+    'page' => "first page",
+	  'title' => "tansaku",
+	  'description' => "hey sam",
+	  'entryName' => "something"
+  )
+);  
+
+
 
 ## Moderation Extension
 
