@@ -171,10 +171,10 @@ $wgDefaultUserOptions['usebetatoolbar'] = 1;
 wfLoadExtension( 'FeaturedFeeds' );
 $wgFeaturedFeeds = array(
   'featured' => array(
-    'page' => "first page",
-	  'title' => "tansaku",
-	  'description' => "hey sam",
-	  'entryName' => "something"
+    'page' => "ffeed-featured-page",
+	  'title' => "ffeed-featured-title",
+	  'description' => "ffeed-featured-desc",
+	  'entryName' => "ffeed-featured-entry"
   )
 );  
 
