@@ -5,8 +5,10 @@ set -x
 /install-update-php-dependencies.sh
 
 sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
-pear install mail
-pear install net_smtp
+# pear install mail
+# git clone https://github.com/pear/Mail.git
+# git clone https://github.com/pear/Net_SMTP.git
+# pear install net_smtp
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
