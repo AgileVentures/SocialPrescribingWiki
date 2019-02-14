@@ -69,7 +69,7 @@ Azure will need adjusting too, e.g.
 ```
 dokku config:set --no-restart hlpwiki DOKKU_LETSENCRYPT_EMAIL=hlpwikiadmin@agileventures.org
 dokku letsencrypt hlpwiki
-dokku letsencrypt:auto-renew hlpwiki
+dokku letsencrypt:cron-job --add
 ```
 
 6. Over environment variables
