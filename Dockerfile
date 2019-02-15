@@ -6,7 +6,7 @@ RUN apt-get update -qq && apt-get install -y software-properties-common apt-tran
     apt-get update -qq && apt-get install -y ghostscript poppler-utils nodejs parsoid --allow-unauthenticated --no-install-recommends && \
     mv ./images ./images-old && ln -s /storage/images ./ && \
     cd /var/www/html/extensions && \
-    git clone -b REL1_32 https://gerrit.wikimedia.org/r/p/mediawiki/extensions/VisualEditor.git && cd VisualEditor && git submodule update --init && \
+    git clone -b REL1_31 https://gerrit.wikimedia.org/r/p/mediawiki/extensions/VisualEditor.git && cd VisualEditor && git submodule update --init && \
     rm -rf /var/lib/apt/lists/*
 
 COPY parsoid /etc/mediawiki/parsoid
