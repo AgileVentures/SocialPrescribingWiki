@@ -4,6 +4,8 @@
       "mediawiki/validator": "~2",
       "mediawiki/semantic-media-wiki": "~3.0",
       "pear/mail": "1.4.*",
-      "pear/Net_SMTP": "1.8.*"
+      "pear/Net_SMTP": "1.8.*",
+      "tinymighty/wiki-seo": "1.2.2",
+      "wikifab/embed-video": "2.5.4"
   }
 }
