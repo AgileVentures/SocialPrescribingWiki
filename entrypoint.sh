@@ -5,10 +5,6 @@ set -x
 /install-update-php-dependencies.sh
 
 sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
-# pear install mail
-# git clone https://github.com/pear/Mail.git
-# git clone https://github.com/pear/Net_SMTP.git
-# pear install net_smtp
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
@@ -38,6 +34,8 @@ fi
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
+	echo >&2 'info: Running extensions/SemanticMediaWiki/maintenance/setupStore.php';
+	php extensions/SemanticMediaWiki/maintenance/setupStore.php
 fi
 
 a2enmod rewrite
