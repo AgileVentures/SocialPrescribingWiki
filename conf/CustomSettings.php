@@ -170,6 +170,9 @@ $wgDefaultUserOptions['usebetatoolbar'] = 1;
 
 wfLoadExtension( 'ParserFunctions' );
 $wgPFEnableStringFunctions = true;
+## Recent Activity 
+
+require_once "$IP/extensions/RecentActivity/RecentActivity.php";
 
 ## Moderation Extension
 
