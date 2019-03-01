@@ -19,6 +19,8 @@ COPY dokku-entrypoint.sh entrypoint.sh \
 COPY extensions extensions/
 COPY VectorTemplate.php skins/Vector/includes/VectorTemplate.php
 COPY nginx.conf.sigil .htaccess ./
+COPY extension.json extensions/ArticleFeedbackv5/extension.json
+COPY jquery.appear.js extensions/ArticleFeedbackv5/modules/jquery.articleFeedbackv5
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]

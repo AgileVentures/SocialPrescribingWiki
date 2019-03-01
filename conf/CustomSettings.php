@@ -160,6 +160,7 @@ wfLoadExtension( 'ArticleFeedbackv5' );
 // $wgArticleFeedbackv5Namespaces = array( NS_MAIN, NS_HELP, NS_PROJECT );
 // enable site-wide on 100% on all namespaces defined in $wgArticleFeedbackv5Namespaces
 // $wgArticleFeedbackv5LotteryOdds = 100;
+
 ## PdfHandler extension
 
 wfLoadExtension( 'PdfHandler' );
