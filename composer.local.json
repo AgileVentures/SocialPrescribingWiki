@@ -2,6 +2,8 @@
   "require": {
       "mediawiki/parser-hooks": "~1",
       "mediawiki/validator": "~2",
-      "mediawiki/semantic-media-wiki": "~3.0"
+      "mediawiki/semantic-media-wiki": "~3.0",
+      "pear/mail": "1.4.*",
+      "pear/Net_SMTP": "1.8.*"
   }
 }

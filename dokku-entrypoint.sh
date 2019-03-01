@@ -26,10 +26,6 @@ echo 'export ' . implode(' ', [
 EOPHP
 )
 
-# todo linked redis vars?
-
-# todo linked memcached vars?
-
 # custom image entrypoint
 echo "Trying custom entrypoint script..."
 if [ -f /app/dokku-entrypoint.sh -a -x /app/dokku-entrypoint.sh ]; then
@@ -38,14 +34,4 @@ if [ -f /app/dokku-entrypoint.sh -a -x /app/dokku-entrypoint.sh ]; then
 fi
 
 # main image entrypoint
-echo "Executing main entrypoint script..."
-echo "MEDIAWIKI_DB_TYPE: $MEDIAWIKI_DB_TYPE"
-echo "MEDIAWIKI_DB_HOST: $MEDIAWIKI_DB_HOST"
-echo "MEDIAWIKI_DB_PORT: $MEDIAWIKI_DB_PORT"
-echo "MEDIAWIKI_DB_USER: $MEDIAWIKI_DB_USER"
-echo "MEDIAWIKI_DB_PORT: $MEDIAWIKI_DB_PORT"
-echo "MEDIAWIKI_DB_NAME: $MEDIAWIKI_DB_NAME"
-echo "MEDIAWIKI_UPDATE: $MEDIAWIKI_UPDATE"
-echo "MEDIAWIKI_SITE_SERVER: $MEDIAWIKI_SITE_SERVER"
-echo "$@"
 /entrypoint.sh $@

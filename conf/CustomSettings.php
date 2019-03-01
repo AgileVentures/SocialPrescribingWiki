@@ -160,6 +160,26 @@ wfLoadExtension( 'ArticleFeedbackv5' );
 // $wgArticleFeedbackv5Namespaces = array( NS_MAIN, NS_HELP, NS_PROJECT );
 // enable site-wide on 100% on all namespaces defined in $wgArticleFeedbackv5Namespaces
 // $wgArticleFeedbackv5LotteryOdds = 100;
+## PdfHandler extension
+
+wfLoadExtension( 'PdfHandler' );
+$wgPdfProcessor = '/usr/bin/gs'; 
+$wgPdfPostProcessor = $wgImageMagickConvertCommand; // if defined via ImageMagick
+$wgPdfInfo = '/usr/bin/pdfinfo'; 
+$wgPdftoText = '/usr/bin/pdftotext';
+
+## MsUpload Extension 
+
+wfLoadExtension( 'MsUpload' );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+
+## ParserFunctions 
+
+wfLoadExtension( 'ParserFunctions' );
+$wgPFEnableStringFunctions = true;
+## Recent Activity 
+
+require_once "$IP/extensions/RecentActivity/RecentActivity.php";
 
 ## Moderation Extension
 

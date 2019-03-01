@@ -1,30 +1,26 @@
 FROM mediawiki:1.31
 
-RUN apt-get update -qq && apt-get install -y software-properties-common apt-transport-https gnupg
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org/debian jessie-mediawiki main"
-RUN apt-get update -qq && apt-get install -y nodejs parsoid --allow-unauthenticated && \
-cd /var/www/html/extensions && curl -L https://extdist.wmflabs.org/dist/extensions/ArticleFeedbackv5-REL1_31-2d4a5a5.tar.gz | tar xz && \
-curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz| tar xz
+RUN apt-get update -qq && apt-get install -y software-properties-common apt-transport-https gnupg wget zip && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get update -qq && apt-add-repository "deb https://releases.wikimedia.org/debian jessie-mediawiki main" && \
+    apt-get update -qq && apt-get install -y ghostscript poppler-utils nodejs parsoid --allow-unauthenticated --no-install-recommends && \
+    mv ./images ./images-old && ln -s /storage/images ./ && cd /var/www/html/extensions && \
+    curl -L https://extdist.wmflabs.org/dist/extensions/CookieWarning-REL1_31-8ab2dfc.tar.gz | tar xz && \
+    curl -L https://extdist.wmflabs.org/dist/extensions/MsUpload-REL1_31-d854ddf.tar.gz | tar xz && \
+    curl -L https://gitlab.com/Aranad/extensions/-/archive/master/extensions-master.tar.gz | tar xz && \
+    curl -L https://extdist.wmflabs.org/dist/extensions/ArticleFeedbackv5-REL1_31-2d4a5a5.tar.gz | tar xz && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY parsoid /etc/mediawiki/parsoid
-RUN apt-get update -qq && apt-get install -y wget zip
-
 COPY conf /conf
-
 COPY dokku-entrypoint.sh entrypoint.sh \ 
      composer-install.sh composer.local.json \ 
      install-update-php-dependencies.sh /
-
-COPY extensions /var/www/html/extensions
-
-COPY VectorTemplate.php /var/www/html/skins/Vector/includes/VectorTemplate.php
-# COPY nginx.conf.sigil /var/www/html
-COPY .htaccess /var/www/html
-
-RUN mv /var/www/html/images /var/www/html/images-old
-RUN ln -s /storage/images /var/www/html/images
+COPY extensions extensions/
+COPY VectorTemplate.php skins/Vector/includes/VectorTemplate.php
+COPY nginx.conf.sigil .htaccess ./
 
 EXPOSE 80 443
 ENTRYPOINT ["/dokku-entrypoint.sh"]
+
 CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]

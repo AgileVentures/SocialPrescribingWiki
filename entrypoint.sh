@@ -1,13 +1,10 @@
 #!/bin/bash
 set -x
 
-
 /composer-install.sh
 /install-update-php-dependencies.sh
 
 sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
-pear install mail
-pear install net_smtp
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
 if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
@@ -31,19 +28,20 @@ if [ ! -e "LocalSettings.php" -a ! -z "$MEDIAWIKI_SITE_SERVER" ]; then
 
         # Append inclusion of /compose_conf/CustomSettings.php
         echo "@include('/conf/CustomSettings.php');" >> LocalSettings.php
-				php maintenance/changePassword.php --user=Admin --password=$MEDIAWIKI_ADMIN_PASS --conf ./LocalSettings.php
 fi
 
 
 if [ -e "LocalSettings.php" -a $MEDIAWIKI_UPDATE = true ]; then
 	echo >&2 'info: Running maintenance/update.php';
 	php maintenance/update.php --quick --conf ./LocalSettings.php
+	echo >&2 'info: Running extensions/SemanticMediaWiki/maintenance/setupStore.php';
+	php extensions/SemanticMediaWiki/maintenance/setupStore.php
 fi
+
 a2enmod rewrite
 sed -i '12 a RewriteEngine On' /etc/apache2/sites-available/000-default.conf
 sed -i '13 a RewriteRule ^/(.*):(.*) /index.php/$1:$2' /etc/apache2/sites-available/000-default.conf
-
+sed -i "/case 'jpg':/c\          case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff': case 'pdf':" extensions/MsUpload/MsUpload.js
 service parsoid start
-# apachectl -e info -D FOREGROUND
 
 exec "$@"
