@@ -153,6 +153,14 @@ wfLoadExtension( 'CookieWarning' );
 $wgCookieWarningEnabled = true; 
 $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
+## ArticleFeedbackv5 Instant Feedback System
+
+wfLoadExtension( 'ArticleFeedbackv5' );
+// $wgArticleFeedbackv5Categories = array( 'Book', 'Patient_advocacy' );
+// $wgArticleFeedbackv5Namespaces = array( NS_MAIN, NS_HELP, NS_PROJECT );
+// enable site-wide on 100% on all namespaces defined in $wgArticleFeedbackv5Namespaces
+// $wgArticleFeedbackv5LotteryOdds = 100;
+
 ## PdfHandler extension
 
 wfLoadExtension( 'PdfHandler' );
