@@ -1,9 +1,9 @@
 <?php
 
-error_reporting( -1 );
-ini_set( 'display_errors', 1 );
+error_reporting(-1);
+ini_set('display_errors', 1);
 
-@include('/app/LocalSettings.php');
+@include '/app/LocalSettings.php';
 
 $wgArticlePath = "/$1";
 
@@ -15,28 +15,32 @@ $wgArticlePath = "/$1";
 $wgUseSiteCss = true;
 $wgAllowSiteCSSOnRestrictedPages = true;
 
-$wgSitename      = "Social Prescribing and Self Care Wiki";
+$wgSitename = "Social Prescribing and Self Care Wiki";
 $wgMetaNamespace = "Social Prescribing and Self Care Wiki";
 
-$wgEnableUserEmail     = true;
-$wgEnotifWatchlist     = true; # UPO
+$wgEnableUserEmail = true;
+$wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
-$wgUploadDirectory  = "/storage/images"; 
-$wgLogo             = "";
+$wgUploadDirectory = "/storage/images";
+$wgLogo = "";
 $wgEmergencyContact = "hlpwikiadmin@agileventures.org";
-$wgPasswordSender   = "hlpwikiadmin@agileventures.org";
-$wgEnableUploads    = true;
-$wgFileExtensions[] = 'pdf';
+$wgPasswordSender = "hlpwikiadmin@agileventures.org";
+$wgEnableUploads = true;
+$wgFileExtensions = array_merge(
+    $wgFileExtensions, array(
+        'pdf', 'svg',
+    )
+);
 
 $wgUsersNotifiedOnAllChanges = array('User', 'Tansaku');
 $SENDGRID_API_KEY_PASSWORD = getenv('SENDGRID_API_KEY_PASSWORD');
 
 $wgSMTP = [
-    'host'     => 'ssl://smtp.sendgrid.net',
-    'IDHost'   => 'sendgrid.net',
-    'port'     => '465',
-    'auth'     => true,
+    'host' => 'ssl://smtp.sendgrid.net',
+    'IDHost' => 'sendgrid.net',
+    'port' => '465',
+    'auth' => true,
     'username' => 'apikey',
     'password' => "$SENDGRID_API_KEY_PASSWORD",
 ];
@@ -46,11 +50,11 @@ $wgDefaultUserOptions['enotifwatchlistpages'] = true;
 $wgFooterIcons['poweredby']['myicon'] = array(
     "src" => "https://dl.dropbox.com/s/1kekg96rkndea64/customized-by-agileventures-176wide.png?dl=1",
     "url" => "http://nonprofits.agileventures.org/",
-    "alt" => "Customized by AgileVentures."
+    "alt" => "Customized by AgileVentures.",
 );
 
 # InstantCommons allows wiki to use images from http://commons.wikimedia.org
-$wgUseInstantCommons  = true;
+$wgUseInstantCommons = true;
 
 $wgAddGroups['sysop'][] = 'automoderated'; # Allow sysops to assign "automoderated" flag
 $wgRemoveGroups['sysop'][] = 'automoderated'; # Allow sysops to remove "automoderated" flag
@@ -70,15 +74,15 @@ require_once "/var/www/html/extensions/ExtraLanguageLink/ExtraLanguageLink.php";
 
 ## Video embed
 
-wfLoadExtension( 'EmbedVideo' );
+wfLoadExtension('EmbedVideo');
 
 ## ConfirmEdit
 $RECAPTCHA_SITE_KEY = getenv('RECAPTCHA_SITE_KEY');
 $RECAPTCHA_SECRET_KEY = getenv('RECAPTCHA_SECRET_KEY');
 
-wfLoadExtension( 'ConfirmEdit' );
+wfLoadExtension('ConfirmEdit');
 
-wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha' ]);
+wfLoadExtensions(['ConfirmEdit', 'ConfirmEdit/ReCaptchaNoCaptcha']);
 $wgCaptchaClass = 'ReCaptchaNoCaptcha';
 $wgReCaptchaSiteKey = "$RECAPTCHA_SITE_KEY";
 $wgReCaptchaSecretKey = "$RECAPTCHA_SECRET_KEY";
@@ -107,7 +111,7 @@ $wgDefaultUserOptions['wikieditor-publish'] = 1;
 
 ## Visual Editor
 
-wfLoadExtension( 'VisualEditor' );
+wfLoadExtension('VisualEditor');
 
 // Enable by default for everybody
 $wgDefaultUserOptions['visualeditor-enable'] = 1;
@@ -125,37 +129,37 @@ $wgHiddenPrefs[] = 'visualeditor-enable';
 ## Parsoid service for Visual Editor
 $MEDIAWIKI_SITE_SERVER = getenv('MEDIAWIKI_SITE_SERVER');
 $wgVirtualRestConfig['modules']['parsoid'] = array(
-        // URL to the Parsoid instance
-        // Use port 8142 if you use the Debian package
-        'url' => $MEDIAWIKI_SITE_SERVER . ':8142',
-        // Parsoid "domain", see below (optional)
-        // 'domain' => 'localhost',
-        //Parsoid "prefix", see below (optional)
+    // URL to the Parsoid instance
+    // Use port 8142 if you use the Debian package
+    'url' => $MEDIAWIKI_SITE_SERVER . ':8142',
+    // Parsoid "domain", see below (optional)
+    // 'domain' => 'localhost',
+    //Parsoid "prefix", see below (optional)
 );
 
 ## ImageMap
 
-wfLoadExtension( 'ImageMap' );
+wfLoadExtension('ImageMap');
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
 ## Cite Extension
 
-wfLoadExtension( 'Cite' );
+wfLoadExtension('Cite');
 
 ## WikiSEO
 
-wfLoadExtension( 'WikiSEO' );
+wfLoadExtension('WikiSEO');
 
 ## CookieWarning extension
 
-wfLoadExtension( 'CookieWarning' );
-$wgCookieWarningEnabled = true; 
+wfLoadExtension('CookieWarning');
+$wgCookieWarningEnabled = true;
 $wgCookieWarningMoreUrl = "/Cookies_Policy";
 
 ## ArticleFeedbackv5 Instant Feedback System
 
-wfLoadExtension( 'ArticleFeedbackv5' );
+wfLoadExtension('ArticleFeedbackv5');
 // $wgArticleFeedbackv5Categories = array( 'Book', 'Patient_advocacy' );
 // $wgArticleFeedbackv5Namespaces = array( NS_MAIN, NS_HELP, NS_PROJECT );
 // enable site-wide on 100% on all namespaces defined in $wgArticleFeedbackv5Namespaces
@@ -163,23 +167,23 @@ wfLoadExtension( 'ArticleFeedbackv5' );
 
 ## PdfHandler extension
 
-wfLoadExtension( 'PdfHandler' );
-$wgPdfProcessor = '/usr/bin/gs'; 
+wfLoadExtension('PdfHandler');
+$wgPdfProcessor = '/usr/bin/gs';
 $wgPdfPostProcessor = $wgImageMagickConvertCommand; // if defined via ImageMagick
-$wgPdfInfo = '/usr/bin/pdfinfo'; 
+$wgPdfInfo = '/usr/bin/pdfinfo';
 $wgPdftoText = '/usr/bin/pdftotext';
 
-## MsUpload Extension 
+## MsUpload Extension
 
-wfLoadExtension( 'MsUpload' );
+wfLoadExtension('MsUpload');
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 
-## ParserFunctions 
+## ParserFunctions
 
-wfLoadExtension( 'ParserFunctions' );
+wfLoadExtension('ParserFunctions');
 $wgPFEnableStringFunctions = true;
 
-## Recent Activity 
+## Recent Activity
 
 require_once "$IP/extensions/RecentActivity/RecentActivity.php";
 
@@ -189,7 +193,7 @@ require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
 
 ## Moderation Extension
 
-wfLoadExtension( 'Moderation' );
+wfLoadExtension('Moderation');
 
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
@@ -203,5 +207,4 @@ $wgModerationNotificationNewOnly = false;
 $wgModerationEmail = $wgEmergencyContact;
 
 ## Semantic Extension
-enableSemantics( 'healthylondon.org' );
-
+enableSemantics('healthylondon.org');
