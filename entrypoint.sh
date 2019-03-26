@@ -42,7 +42,6 @@ a2enmod rewrite
 sed -i '12 a RewriteEngine On' /etc/apache2/sites-available/000-default.conf
 sed -i '13 a RewriteRule ^/(.*):(.*) /index.php/$1:$2' /etc/apache2/sites-available/000-default.conf
 sed -i "/case 'jpg':/c\          case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff': case 'pdf':" extensions/MsUpload/MsUpload.js
-sed -i "s/upload_max_filesize =.*/upload_max_filesize = 5M/g" /usr/local/etc/php/php.ini-production
 service parsoid start
 
 exec "$@"
