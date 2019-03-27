@@ -189,12 +189,12 @@ require_once "$IP/extensions/RecentActivity/RecentActivity.php";
 
 ## Default to Visual Editor for page creation
 
-$wgHooks['HtmlPageLinkRendererBegin'][] = function ( $linkRenderer, $target, &$text, &$extraAttribs, &$query, &$ret ) {
-	$title = Title::newFromLinkTarget( $target );
-	if ( !$title->isKnown() ) {
-		$query['veaction'] = 'edit';
-		$query['action'] = 'view'; // Prevent MediaWiki from overriding veaction
-	}
+$wgHooks['HtmlPageLinkRendererBegin'][] = function ($linkRenderer, $target, &$text, &$extraAttribs, &$query, &$ret) {
+    $title = Title::newFromLinkTarget($target);
+    if (!$title->isKnown()) {
+        $query['veaction'] = 'edit';
+        $query['action'] = 'view'; // Prevent MediaWiki from overriding veaction
+    }
 };
 
 ## SimpleEmbed
@@ -203,11 +203,15 @@ require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
 
 ## Elastica
 
-wfLoadExtension( 'Elastica' );
+wfLoadExtension('Elastica');
 
 ## CirrusSearch
 
 require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
+
+## AdvancedSearch
+
+wfLoadExtension('AdvancedSearch');
 
 ## Moderation Extension
 
