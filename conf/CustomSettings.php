@@ -201,6 +201,10 @@ $wgHooks['HtmlPageLinkRendererBegin'][] = function ( $linkRenderer, $target, &$t
 
 require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
 
+## Elastica
+
+wfLoadExtension( 'Elastica' );
+
 ## Moderation Extension
 
 wfLoadExtension('Moderation');
