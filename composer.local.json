@@ -4,6 +4,8 @@
       "mediawiki/validator": "~2",
       "mediawiki/semantic-media-wiki": "~3.0",
       "pear/mail": "1.4.*",
-      "pear/Net_SMTP": "1.8.*"
+      "pear/Net_SMTP": "1.8.*",
+      "elasticsearch/elasticsearch": "~6.0",
+      "ruflin/elastica": "~6.0"
   }
 }

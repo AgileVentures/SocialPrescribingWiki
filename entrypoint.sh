@@ -3,7 +3,7 @@ set -x
 
 /composer-install.sh
 /install-update-php-dependencies.sh
-
+ 
 sed -i "/MEDIAWIKI_SITE_SERVER/c\        uri: '$MEDIAWIKI_SITE_SERVER/api.php'" /etc/mediawiki/parsoid/config.yaml
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
