@@ -14,7 +14,7 @@ COPY parsoid /etc/mediawiki/parsoid
 COPY conf /conf
 COPY dokku-entrypoint.sh entrypoint.sh \ 
      composer-install.sh composer.local.json \ 
-     install-update-php-dependencies.sh /
+     install-update-php-dependencies.sh install-extensions.sh /
 COPY extensions extensions/
 COPY VectorTemplate.php skins/Vector/includes/VectorTemplate.php
 COPY nginx.conf.sigil .htaccess ./

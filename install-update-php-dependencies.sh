@@ -2,5 +2,4 @@ COMPOSER_ALLOW_SUPERUSER=true php composer.phar require mediawiki/semantic-media
 COMPOSER_ALLOW_SUPERUSER=true php composer.phar require pear/mail "1.4.1" --update-no-dev
 COMPOSER_ALLOW_SUPERUSER=true php composer.phar require pear/net_smtp "1.8.1" --update-no-dev
 COMPOSER_ALLOW_SUPERUSER=true php composer.phar require elasticsearch/elasticsearch "~6.0" --update-no-dev
-COMPOSER_ALLOW_SUPERUSER=true php composer.phar require ruflin/elastica "~6.0" --update-no-dev
 COMPOSER_ALLOW_SUPERUSER=true php composer.phar update --no-dev
