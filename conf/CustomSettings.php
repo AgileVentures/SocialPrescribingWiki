@@ -205,6 +205,10 @@ require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
 
 wfLoadExtension( 'Elastica' );
 
+## CirrusSearch
+
+require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
+
 ## Moderation Extension
 
 wfLoadExtension('Moderation');
